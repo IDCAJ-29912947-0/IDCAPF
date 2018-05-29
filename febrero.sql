@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 28-05-2018 a las 17:56:43
+-- Tiempo de generación: 29-05-2018 a las 20:57:00
 -- Versión del servidor: 5.6.12-log
 -- Versión de PHP: 5.4.12
 
@@ -357,7 +357,7 @@ INSERT INTO `opcion` (`cod_opc`, `nom_opc`, `fky_modulo`, `url_opc`, `est_opc`) 
 (35, 'Asignar Permisos', 10, 'filtrar_usuario.php', 'A'),
 (37, 'Listar MÃ³dulos', 7, 'listar_modulo.php', 'A'),
 (38, 'Agregar Banco', 12, 'agregar_banco.php', 'A'),
-(39, 'Listar Banco', 12, 'listar_banco.php', 'A'),
+(39, 'Listar Banco', 12, 'filtrar_banco.php', 'A'),
 (41, 'Listar Estado', 13, 'filtrar_estado.php', 'A'),
 (42, 'Agregar Estado', 13, 'agregar_estado.php', 'A'),
 (43, 'Agregar Ciudad', 15, 'agregar_ciudad.php', 'A'),
