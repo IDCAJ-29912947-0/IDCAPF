@@ -1,10 +1,17 @@
 <?php
 require("../../../backend/clase/cliente.class.php");
 require("../../../backend/clase/permiso.class.php");
+require("../../../backend/clase/banco.class.php");
+require("../../../backend/clase/empleado.class.php");
+require("../../../backend/clase/responsable_cliente.class.php");
+
 
 
 $obj=new cliente;
+$objBanco=new banco;
 $objPermiso=new permiso;
+$objEmpleado=new empleado;
+$objCliRes=new responsable_cliente;
 
 $permiso=$objPermiso->validar_acceso($opcion=1,$fky_usuario=1,$token=md5("12345"));
 $acceso=$objPermiso->extraer_dato($permiso);
@@ -17,18 +24,17 @@ foreach($_REQUEST as $nombre_campo => $valor){
 
 $resultado=$obj->filtrar($obj->cod_cli,$rfc_cli="",$com_cli="");
 $datos=$obj->extraer_dato($resultado);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Modificar Cliente</title>
+	<title>Ver Cliente</title>
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link rel="stylesheet" href="../../bootstrap-4.0/css/bootstrap.min.css">
 </head>
 <body>
-
-<form action="../../../backend/controlador/Cliente.php" method="POST">
 
 	<div class="container">
 
@@ -40,107 +46,47 @@ $datos=$obj->extraer_dato($resultado);
 
 	  <div class="row mt-1 bg-light">
 
-		<div class="col-md-3 col-12 align-self-center">
+		<div class="col-md-4 col-12 align-self-center">
 		     <label for="">Nombre Comercial:</label>
 		</div>
-		<div class="col-md-4 col-12">
-		    <input type="text" name="com_cli" id="com_cli" required="required" maxlength="25" class="form-control" placeholder="Nombre Comercial" onkeyup="return solo_letras();" value="<?php echo $datos['com_cli'] ?>" disabled>
+		<div class="col-md-8 col-12">
+		    <input type="text" name="com_cli" id="com_cli" required="required" maxlength="80" class="form-control" placeholder="Nombre Comercial" onkeyup="return solo_letras();" value="<?php echo $datos['com_cli'] ?>" readonly>
 		</div>
 
 	  </div>
 
 	  <div class="row mt-1 bg-light">
 
-		<div class="col-md-3 col-12 align-self-center">
+		<div class="col-md-4 col-12 align-self-center">
 		     <label for="">RFC:</label>
 		</div>
 		<div class="col-md-4 col-12">
-		    <input type="text" name="rfc_cli" id="rfc_cli" required="required" maxlength="15" class="form-control" placeholder="RFC" onkeyup="return solo_numeros();" disabled value="<?php echo $datos['rfc_cli'] ?>">
+		    <input type="text" name="rfc_cli" id="rfc_cli" required="required" maxlength="15" class="form-control" placeholder="RFC" onkeyup="return solo_numeros();" value="<?php echo $datos['rfc_cli'] ?>"  readonly>
 		</div>
 
 	  </div> 
 
-	   <div class="row mt-1 bg-light">
+	  <div class="row mt-2 bg-light">
 
-		<div class="col-md-3 col-12 align-self-center">
-		     <label for="">Referencia Bancaria:</label>
+		<div class="col-md-4 col-12 align-self-center text-left">
+		     <label for="">Banco:</label>
 		</div>
-		<div class="col-md-6 col-12">
-		    <input type="text" name="ref_cli" id="ref_cli" required="required" maxlength="20" class="form-control" placeholder="Referencia Bancaria" value="<?php echo $datos['ref_cli'] ?>" disabled>
-		</div>
-
-	  </div> 
-
-
-	   <div class="row mt-1 bg-light">
-
-		<div class="col-md-3 col-12 align-self-center">
-		     <label for="">Clabe Interbancaria:</label>
-		</div>
-		<div class="col-md-6 col-12">
-		    <input type="text" name="cue_cli" id="cue_cli" required="required" maxlength="20" class="form-control" placeholder="Clabe Interbancaria" value="<?php echo $datos['cue_cli'] ?>" disabled>
-		</div>
-
-	  </div> 
-
-	   <div class="row mt-1 bg-light">
-
-		<div class="col-md-3 col-12 align-self-center">
-		     <label for="">Filiales:</label>
-		</div>
-		<div class="col-md-6 col-12">
-		    <input type="text" name="fil_cli" id="fil_cli" required="required" maxlength="20" class="form-control" placeholder="Filiales"  value="<?php echo $datos['fil_cli'] ?>" disabled>
-		</div>
-
-	  </div> 	
-
-	   <div class="row mt-1 bg-light">
-
-		<div class="col-md-3 col-12 align-self-center">
-		     <label for="">Departamento:</label>
-		</div>
-		<div class="col-md-6 col-12">
-		    <input type="text" name="dep_cli" id="dep_cli" required="required" maxlength="20" class="form-control" placeholder="Departamento" value="<?php echo $datos['dep_cli'] ?>" disabled>
-		</div>
-
-	  </div>
-
-
-	   <div class="row mt-1 bg-light">
-
-		<div class="col-md-3 col-12 align-self-center">
-		     <label for="">Crédito:</label>
-		</div>
-		<div class="col-md-3 col-12">
-		        <input type="text" name="cre_cli" id="cre_cli" required="required" maxlength="10" class="form-control" placeholder="Credito" value="<?php echo $datos['cre_cli'] ?>" disabled>
-		</div>
-
-	  </div>
-
-	   <div class="row mt-1 bg-light">
-
-		<div class="col-md-3 col-12 align-self-center">
-		     <label for="">Fecha de Pago:</label>
-		</div>
-		<div class="col-md-3 col-12">
-		    <input type="date" name="pag_cli" id="pag_cli" required="required"  class="form-control" placeholder="Fecha de Pago"  value="<?php  echo $datos['pag_cli'] ?>" disabled>
-		</div>
-
-	  </div>
-
-	   <div class="row mt-1 bg-light">
-
-		<div class="col-md-3 col-12 align-self-center">
-		     <label for="">Días de Crédito:</label>
-		</div>
-		<div class="col-md-3 col-12">
-			<fieldset disabled>
-		    <select name='dia_cli' id='dia_cli' class="form-control">
+		<div class="col-md-4 col-12">
+		  <fieldset disabled>	
+		    <select name="fky_banco" id="fky_banco" class="form-control">
+		    <option value="X">Seleccione...</option>
 		    <?php
-		    	for ($i=0; $i < 366 ; $i++) { 
-		    		if($datos["dia_cli"]==$i)
-		    		echo "<option value='$i'>$i</option>";
-		    	}
+		    $objBanco->asignar_valor("est_ban","A");
+		    $pun_ban=$objBanco->listar();
+		    while(($banco=$objBanco->extraer_dato($pun_ban))>0)
+		    {
+		    	if($banco["cod_ban"]==$datos["fky_banco"])
+                    $selected='selected';
+                      else
+                      	 $selected='';
+
+ 		    	echo "<option value='$banco[cod_ban]' $selected>$banco[nom_ban]</option>";
+		    }	
 		    ?>
 		    </select>
 		    </fieldset>
@@ -149,180 +95,251 @@ $datos=$obj->extraer_dato($resultado);
 	  </div>
 
 
+	   <div class="row mt-1 bg-light">
 
-	  <div class="row mt-1 bg-light">
-	     <div class="col-md-3 col-12 align-self-center">
-		     <label for="">Estatus:</label>
-		</div>
-	    <div class="col-md-3 col-12">
-	    <fieldset disabled>
-		<select name="est_cli" id="est_cli" class="form-control">
-			<option value="A" selected="">Activo</option>
-			<option value="I">Inactivo</option>	
-		</select>
-	    </fieldset>
-		</div>
-	 </div>
-
-	 <div class="row  mt-1 bg-primary text-white">
-	 	 <div class="col-12 text-center">
-	  	<h4>Responsable Principal</h4>
-	 	 </div>
-	  </div>
-
-	  <div class="row mt-1 bg-light">
-
-		<div class="col-md-3 col-12 align-self-center">
-		     <label for="">Nombre:</label>
-		</div>
-		<div class="col-md-4 col-12">
-		    <input type="text" name="re1_cli" id="re1_cli" required="required" maxlength="25" class="form-control" placeholder="Nombre del Responsable Principal" disabled onkeyup="return solo_letras();" value="<?php echo $datos['re1_cli'] ?>" >
-		</div>
-
-	  </div>
-
-	  <div class="row mt-1 bg-light">
-
-		<div class="col-md-3 col-12 align-self-center">
-		     <label for="">Teléfono:</label>
-		</div>
-		<div class="col-md-4 col-12">
-		    <input type="text" name="te1_cli" id="te1_cli" required="required" maxlength="15" class="form-control" pladisabled ceholder="Teléfono Responsable Principal" disabled value="<?php echo $datos['te1_cli'] ?>">
-		</div>
-
-	  </div>
-
-	  <div class="row mt-1 bg-light">
-
-		<div class="col-md-3 col-12 align-self-center">
-		     <label for="">Dirección:</label>
+		<div class="col-md-4 col-12 align-self-center">
+		     <label for="">Clabe Interbancaria:</label>
 		</div>
 		<div class="col-md-6 col-12">
-		    <input type="text" name="di1_cli" id="di1_cli" required="required" maxlength="80" class="form-control" placeholderdisabled ="Dirección del Responsable Principal" disabled value="<?php echo $datos['di1_cli'] ?>">
-		</div>
-
-	  </div>
-
-	  	  <div class="row mt-1 bg-light">
-
-		<div class="col-md-3 col-12 align-self-center">
-		     <label for="">Email:</label>
-		</div>
-		<div class="col-md-6 col-12">
-		    <input type="text" name="em1_cli" id="em1_cli" required="required" maxlength="80" class="form-control" placeholddisabled er="Email del Responsable Principal" disabled value="<?php echo $datos['em1_cli'] ?>">
-		</div>
-
-	  </div>
-
-
-
-
-     <div class="row  mt-1 bg-primary text-white">
-	 	 <div class="col-12 text-center">
-	  	<h4>Responsable Secundario</h4disabled >
-	 	 </div>
-	  </div>
-
-	  <div class="row mt-1 bg-light">
-
-		<div class="col-md-3 col-12 align-self-center">
-		     <label for="">Nombre:</label>
-		</div>
-		<div class="col-md-4 col-12">
-		    <input type="text" name="re2_cli" id="re2_cli" required="required" maxlength="25" class="form-control" placeholder="Nombre del Responsable Secundario" disabled onkeyup="return solo_letras();" value="<?php echo $datos['re2_cli'] ?>">
-		</div>
-
-	  </div>
-
-	  <div class="row mt-1 bg-light">
-
-		<div class="col-md-3 col-12 align-self-center">
-		     <label for="">Teléfono:</label>
-		</div>
-		<div class="col-md-4 col-12">
-		    <input type="text" name="te2_cli" id="te2_cli" required="required" maxlength="15" class="form-control" placeholder="Teléfono Responsable Secundario" disabled value="<?php echo $datos['te2_cli'] ?>">
-		</div>
-
-	  </div>
-
-	  <div class="row mt-1 bg-light">
-
-		<div class="col-md-3 col-12 align-self-center">
-		     <label for="">Dirección:</label>
-		</div>
-		<div class="col-md-6 col-12">
-		    <input type="text" name="di2_cli" id="di2_cli" required="required" maxlength="80" class="form-control" placeholder="Dirección del Responsable Secundario" disabled value="<?php echo $datos['di2_cli'] ?>">
-		</div>
-
-	  </div>
-
-	  <div class="row mt-1 bg-light">
-
-		<div class="col-md-3 col-12 align-self-center">
-		     <label for="">Email:</label>
-		</div>
-		<div class="col-md-6 col-12">
-		    <input type="text" name="em2_cli" id="em2_cli" required="required" maxlength="80" class="form-control" placeholder="Email del Responsable Secundario" disabled value="<?php echo $datos['em2_cli'] ?>">
-		</div>
-
-	  </div>
-
-
-
-
-    <div class="row  mt-1 bg-primary text-white">
-	 	 <div class="col-12 text-center">
-	  	<h4>Otro Responsable</h4>
-	 	 </div>
-	  </div>
-
-	  <div class="row mt-1 bg-light">
-
-		<div class="col-md-3 col-12 align-self-center">
-		     <label for="">Nombre:</label>
-		</div>
-		<div class="col-md-4 col-12">
-		    <input type="text" name="re3_cli" disabled id="re3_cli" required="required" maxlength="25" class="form-control" placeholder="Nombre del Tercer Responsable" onkeyup="return solo_letras();" value="<?php echo $datos['re3_cli'] ?>">
-		</div>
-
-	  </div>
-
-	  <div class="row mt-1 bg-light">
-
-		<div class="col-md-3 col-12 align-self-center">
-		     <label for="">Teléfono:</label>
-		</div>
-		<div class="col-md-4 col-12">
-		    <input type="text" name="te3_cli" disabled id="te3_cli" required="required" maxlength="15" class="form-control" placeholder="Teléfono Otro Responsable" value="<?php echo $datos['te3_cli'] ?>">
-		</div>
-
-	  </div>
-
-	  <div class="row mt-1 bg-light">
-
-		<div class="col-md-3 col-12 align-self-center">
-		     <label for="">Dirección:</label>
-		</div>
-		<div class="col-md-6 col-12">
-		    <input type="text" name="di3_cli" disabled id="di3_cli" required="required" maxlength="80" class="form-control" placeholder="Dirección Otro Responsable" value="<?php echo $datos['di3_cli'] ?>">
-		</div>
-
-	  </div>
-
-	  <div class="row mt-1 bg-light">
-
-		<div class="col-md-3 col-12 align-self-center">
-		     <label for="">Email:</label>
-		</div>
-		<div class="col-md-6 col-12">
-		    <input type="text" name="em3_cli" disabled id="em3_cli" required="required" maxlength="80" class="form-control" placeholder="Email Otro Responsable" value="<?php echo $datos['em3_cli'] ?>">
+		    <input type="text" name="cue_cli" id="cue_cli" required="required" maxlength="20" class="form-control" placeholder="Clabe Interbancaria" value="<?php echo $datos['cue_cli'] ?>"  readonly>
 		</div>
 
 	  </div> 
 
-	</div> <!-- Fin Container -->
+	   <div class="row mt-1 bg-light">
+
+		<div class="col-md-4 col-12 align-self-center">
+		     <label for="">Filiales:</label>
+		</div>
+		<div class="col-md-6 col-12">
+		    <input type="text" name="fil_cli" id="fil_cli" required="required" maxlength="20" class="form-control" placeholder="Filiales"  value="<?php echo $datos['fil_cli'] ?>"  readonly>
+		</div>
+
+	  </div> 	
+
+	   <div class="row mt-1 bg-light">
+
+		<div class="col-md-4 col-12 align-self-center">
+		     <label for="">Crédito:</label>
+		</div>
+		<div class="col-md-4 col-12">
+		    <input type="text" name="cre_cli" id="cre_cli" required="required" maxlength="10" class="form-control" placeholder="Credito" value="<?php echo $datos['cre_cli'] ?>"  readonly>
+		</div>
+
+		<div class="col-md-4 col-12 align-self-center">
+		    <span> Pesos</span>
+		</div>
+
+	  </div>
+
+	   	   <div class="row mt-1 bg-light">
+
+		<div class="col-md-4 col-12 align-self-center">
+		     <label for="">Día de Pago:</label>
+		</div>
+		<div class="col-md-4 col-12">
+		<fieldset disabled>
+		    <select name='pag_cli' id='pag_cli' class="form-control">
+		    <?php
+		    	for ($i=1; $i < 31 ; $i++) { 
+                     
+                     if($i==$datos['pag_cli'])
+                     	 $selected='selected';
+                     	   else
+                     	   	 $selected='';
+
+		    		echo "<option value='$i' $selected>$i</option>";
+		    	}
+		    ?>
+		    </select>
+		   </fieldset> 
+		</div>
+
+	  </div>
+
+	   <div class="row mt-1 bg-light">
+
+		<div class="col-md-4 col-12 align-self-center">
+		     <label for="">Vencimiento del Pago:</label>
+		</div>
+		<div class="col-md-4 col-12">
+		<fieldset disabled>
+		    <select name='ven_cli' id='ven_cli' class="form-control">
+		    <?php
+		    	for ($i=1; $i < 31 ; $i++) { 
+
+		    		if($i==$datos['ven_cli'])
+                     	 $selected='selected';
+                     	   else
+                     	   	 $selected='';
+
+		    		echo "<option value='$i' $selected>$i</option>";
+		    	}
+		    ?>
+		    </select>
+		   </fieldset> 
+		</div>
+
+	  </div>
+
+	   <div class="row mt-1 bg-light">
+
+		<div class="col-md-4 col-12 align-self-center">
+		     <label for="">Días de Crédito:</label>
+		</div>
+		<div class="col-md-4 col-12">
+		  <fieldset disabled>
+		    <select name='dia_cli' id='dia_cli' class="form-control">
+		    <?php
+		    	for ($i=0; $i < 366 ; $i++) { 
+		    		if($datos["dia_cli"]==$i)
+		    		echo "<option value='$i'>$i</option>";
+		    	}
+		    ?>
+		    </select>
+		</fieldset>
+		</div>
+
+	  </div>
+
+	  	<div class="row mt-2 bg-light">
+		<div class="col-md-4 col-12 align-self-center text-left">
+		     <label for="">Ejecutivo Asociado:</label>
+		</div>	 	
+	 <div class="col-md-8 col-12">
+	 	   <fieldset disabled>
+			   <select name="fky_empleado" id="fky_empleado" class="form-control">
+			   <option>Seleccione...</option>
+			   <?php
+			   $objEmpleado->est_emp="A";
+			   $emp=$objEmpleado->listar();
+			   while(($empleado=$obj->extraer_dato($emp))>0)
+			   {				   		
+                    $selected=($empleado['cod_emp']==$datos['fky_empleado'])?"selected":"";
+			   		echo "<option value='$empleado[cod_emp]' $selected>$empleado[nom_emp] $empleado[ape_emp]</option>";
+			   }
+			   ?>
+			   </select>
+	   	    </fieldset>	   
+		  </div>
+	</div>
+
+
+
+	<fieldset disabled>
+	  <div class="row mt-1 bg-light">
+	     <div class="col-md-4 col-12 align-self-center">
+		     <label for="">Estatus:</label>
+		</div>
+	    <div class="col-md-4 col-12">
+		<select name="est_cli" id="est_cli" class="form-control">
+			<option value="A" <?php echo $selected=($empleado['est_cli'])?"selected":""; ?>>Activo</option>
+			<option value="I" <?php echo $selected=($empleado['est_cli'])?"selected":""; ?>>Inactivo</option>	
+		</select>
+		</div>
+	 </div>
+	</fieldset>
+
+<?php	
+
+for($i=1;$i<6;$i++)
+{
+  $clase=($i>0)?"d-block":"d-none";
+
+  $objCliRes->asignar_valor("fky_cliente",$obj->cod_cli);
+
+  $pun_res=$objCliRes->filtrar($i-1);
+  $responsable=$objCliRes->extraer_dato($pun_res);
+  
+     
+?>
+<div class="<?php echo $clase ?>" id="responsable<?php echo $i ?>">
+	<div class="row mt-1 bg-light">
+	  <div class="col-md-12 col-12 align-self-center">
 	
-</form>	
+			<div class="accordion mt-1 ml-0 mr-0" id="accordionExample">
+			  <div class="card">
+			    <div class="card-header" id="headingOne">
+			      <h5 class="mb-0">
+			        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne<?php echo $i ?>" aria-expanded="true" aria-controls="collapseOne">
+			          <span class="text-primary">Persona Responsable <?php echo $i ?> </span>
+			        </button>
+	
+			      </h5>
+			    </div>
+	
+			    <div id="collapseOne<?php echo $i ?>" class="collapse hidden" aria-labelledby="headingOne" data-parent="#accordionExample">
+			      <div class="card-body">
+
+			      	  <input type="hidden" name="co<?php echo $i ?>_res" id="co<?php echo $i ?>_res" 
+			      	  value="<?php echo $responsable['cod_res']; ?>">
+					  <div class="row mt-1 bg-light">
+	
+							<div class="col-md-3 col-12 align-self-center">
+							     <label for="">Nombre:</label>
+							</div>
+							<div class="col-md-6 col-12">
+							    <input type="text" name="re<?php echo $i ?>_res" id="re<?php echo $i ?>_res"  maxlength="50" class="form-control" placeholder="Nombre del Responsable Principal" onkeyup="return solo_letras();" 
+							    value="<?php echo "$responsable[nom_res]"; ?>"  readonly>
+							</div>
+	
+						  </div>
+	
+						  <div class="row mt-1 bg-light">
+	
+							<div class="col-md-3 col-12 align-self-center">
+							     <label for="">Teléfono:</label>
+							</div>
+							<div class="col-md-4 col-12">
+							    <input type="text" name="te<?php echo $i ?>_res" id="te<?php echo $i ?>_res"  maxlength="15" class="form-control" placeholder="Teléfono Responsable Principal" 
+							    value="<?php echo "$responsable[tel_res]"; ?>"  readonly>
+							</div>
+	
+						  </div>
+	
+					 <div class="row mt-2 bg-light">
+	
+							<div class="col-md-3 col-12 align-self-center">
+							     <label for="">Email:</label>
+							</div>
+							<div class="col-md-6 col-12">
+							    <input type="text" name="em<?php echo $i ?>_res" id="em<?php echo $i ?>_res"  maxlength="80" class="form-control" placeholder="Email del Responsable Principal"
+							    value="<?php echo "$responsable[ema_res]"; ?>"  readonly>
+							</div>
+					</div>
+	
+					 <div class="row mt-2 bg-light">
+	
+							<div class="col-md-3 col-12 align-self-center">
+							     <label for="">Área/Departamento:</label>
+							</div>
+							<div class="col-md-6 col-12">
+							    <input type="text" name="ar<?php echo $i ?>_res" id="ar<?php echo $i ?>_res"  maxlength="80" class="form-control" placeholder="Área o Departamento"
+							    value="<?php echo "$responsable[are_res]"; ?>"  readonly>
+							</div>
+	
+					</div>	
+							
+	
+			      </div>
+			    </div>
+			  </div>
+			  
+			</div>
+	
+		</div>
+	</div>
+</div>
+<?php
+ 
+}
+?>	
+	 
+
+	</div> <!-- Fin Container -->
+	<script src="../../bootstrap-4.0/js/jquery-3.2.1.min.js"></script>
+	<script src="../../bootstrap-4.0/js/popper-1.12.6.min.js"></script>
+	<script src="../../bootstrap-4.0/js/bootstrap.min.js">	</script>				
 </body>
 </html>
 

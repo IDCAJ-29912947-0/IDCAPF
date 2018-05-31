@@ -33,7 +33,7 @@ if($acceso["est_per"]=="A")
 	  </div>
 
 	  <div class="row mt-1 bg-light">
-		<div class="col-md-2 col-12 align-self-center">
+		<div class="col-md-3 col-12 align-self-center">
 		     <label for="">RFC:</label>
 		</div>
 		<div class="col-md-4 col-12">
@@ -43,7 +43,7 @@ if($acceso["est_per"]=="A")
 
 	  <div class="row mt-1 bg-light">
 
-		<div class="col-md-2 col-12 align-self-center">
+		<div class="col-md-3 col-12 align-self-center">
 		     <label for="">Nombre Comercial:</label>
 		</div>
 		<div class="col-md-4 col-12">

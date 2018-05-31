@@ -50,24 +50,13 @@ if($acceso["est_per"]=="A")
 		     <span>RFC</span>
 		</div>
 
-		<div class="col-md-2 col-12 border border-white ">
+		<div class="col-md-4 col-12 border border-white ">
 		     <span>Nombre Comercial</span>
 		</div>
 
-		<div class="col-md-1 col-12 border border-white">
-		     <span>Monto Crédito</span>
-		</div>
-		
-	 	<div class="col-md-1 col-12 border border-white">
-		     <span>Días Crédito</span>
-		</div>
 
-		<div class="col-md-2 col-12 border border-white">
-		     <span>Fecha Pago</span>
-		</div>
-
-		<div class="col-md-2 col-12 border border-white">
-		     <span>Estatus</span>
+		<div class="col-md-4 col-12 border border-white">
+		     <span>Asesor</span>
 		</div>
 
 		</div> <!-- Fin Row-->
@@ -86,33 +75,18 @@ if($acceso["est_per"]=="A")
 		</div>
 
 		<div class="col-md-2 col-12 border border-white">
-		     <span><?php echo $datos['rfc_cli']; ?></span>
+		     <small><?php echo $datos['rfc_cli']; ?></small>
 		</div>
 
-		<div class="col-md-2 col-12 border border-white text-uppercase">
-		     <span><?php echo $datos['com_cli']; ?></span>
+		<div class="col-md-4 col-12 border border-white text-uppercase">
+		     <small><?php echo $datos['com_cli']; ?></small>
 		</div>
 
-		<div class="col-md-1 col-12 border border-white text-uppercase">
-		     <span><?php echo $datos['cre_cli']; ?></span>
-		</div>
-		
-	 	<div class="col-md-1 col-12 border border-white">
-		      <span><?php echo $datos['dia_cli']; ?></span>
+		<div class="col-md-4 col-12 border border-white text-uppercase">
+		     <small><?php echo $datos['nom_emp']; ?></small>
 		</div>
 
-		<div class="col-md-2 col-12 border border-white text-left text-lowercase">
-		     <span><?php echo $datos['pag_cli']; ?></span>
-		</div>
-
-	    <div class="col-md-2 col-12 border border-white text-left ">
-		     <span><?php 
-						if($datos['est_cli']=='A') 
-							echo "Activo";
-							 else 
-							    echo "Inactivo"; 
-					?></span>
-		</div>
+	    
 		<?php
 		}
 

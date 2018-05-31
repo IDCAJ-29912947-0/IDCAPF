@@ -24,7 +24,7 @@ if($acceso["est_per"]=="A")
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 	<title>Listar Estado</title>
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link rel="stylesheet" href="../../bootstrap-4.0/css/bootstrap.min.css">
