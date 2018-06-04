@@ -12,9 +12,10 @@ class taller extends utilidad
    public $te2_tal;
    public $ema_tal;
    public $cue_tal;
-   public $tip_tal;
    public $fky_banco;
    public $fky_ciudad;
+   public $fky_franquicia;
+   public $fky_tipo_taller;
    public $est_tal;
 
 //==============================================================================
@@ -28,9 +29,10 @@ class taller extends utilidad
         te2_tal,
         ema_tal,
         cue_tal,
-        tip_tal,
         fky_banco,
         fky_ciudad,
+        fky_franquicia,
+        fky_tipo_taller,
         est_tal)
       values
       ('$this->nom_tal',
@@ -40,9 +42,10 @@ class taller extends utilidad
        '$this->te2_tal',
        '$this->ema_tal',
        '$this->cue_tal',
-       '$this->tip_tal',
         $this->fky_banco,
         $this->fky_ciudad,
+        $this->fky_franquicia,
+        $this->fky_tipo_taller,        
        '$this->est_tal');";
 
        
@@ -59,9 +62,10 @@ class taller extends utilidad
                 te2_tal='$this->te2_tal',
                 ema_tal='$this->ema_tal',
                 cue_tal='$this->cue_tal',
-                tip_tal='$this->tip_tal',
                 fky_banco=$this->fky_banco,
                 fky_ciudad=$this->fky_ciudad,
+                fky_franquicia=$this->fky_franquicia,
+                fky_tipo_taller=$this->fky_tipo_taller,                   
                 est_tal='$this->est_tal' 
             where 
                 cod_tal='$this->cod_tal';";

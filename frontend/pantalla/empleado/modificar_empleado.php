@@ -29,7 +29,7 @@ $datos=$obj->extraer_dato($resultado);
 </head>
 <body>
 
-<form action="../../../backend/controlador/Empleado.php" method="POST">
+<form action="../../../backend/controlador/empleado.php" method="POST">
 
 	<div class="container">
 

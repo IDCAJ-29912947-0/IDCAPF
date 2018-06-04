@@ -26,7 +26,7 @@ if($acceso["est_per"]=="A")
 </head>
 <body>
 
-<form action="../../../backend/controlador/Cliente.php" method="POST">
+<form action="../../../backend/controlador/cliente.php" method="POST">
 
 	<div class="container">
 
@@ -86,7 +86,7 @@ if($acceso["est_per"]=="A")
 		     <label for="">Clabe Interbancaria:</label>
 		</div>
 		<div class="col-md-6 col-12">
-		    <input type="text" name="cue_cli" id="cue_cli" required="required" maxlength="20" class="form-control" placeholder="Clabe Interbancaria">
+		    <input type="text" name="cue_cli" id="cue_cli" required="required" maxlength="18" class="form-control" placeholder="Clabe Interbancaria">
 		</div>
 
 	  </div> 

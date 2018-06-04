@@ -102,7 +102,7 @@ class cliente extends utilidad
        
       
 
-   		  $sql="select c.*,e.cod_emp,e.nom_emp from cliente c, empleado e  where c.fky_empleado=e.cod_emp $filtro1 $filtro2 $filtro3";
+   		  $sql="select c.*,e.cod_emp,e.nom_emp from cliente c, empleado e  where c.fky_empleado=e.cod_emp $filtro1 $filtro2 $filtro3 ";
        
    	    return $this->ejecutar($sql);  
 

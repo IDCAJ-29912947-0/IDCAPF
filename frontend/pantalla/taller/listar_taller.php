@@ -36,7 +36,7 @@ if($acceso["est_per"]=="A")
 	<div class="container-fluid">
 
 	<div class="row justify-content-center">
-	<div class="col-11 text-center ">
+	<div class="col-12 text-center ">
 
 
 	 <div class="row bg-primary text-white">
@@ -54,23 +54,23 @@ if($acceso["est_per"]=="A")
 		</div>
 
 		<div class="col-md-3 col-12 border border-white ">
-		     <span>Taller</span>
+		     <small>Taller</small>
 		</div>
 
 		<div class="col-md-2 col-12 border border-white ">
-		     <span>Responsable</span>
+		     <small>Responsable</small>
 		</div>
 
 		<div class="col-md-2 col-12 border border-white ">
-		     <span>Ciudad</span>
+		     <small>Ciudad</small>
 		</div>
 
 		<div class="col-md-2 col-12 border border-white ">
-		     <span>Telefono</span>
+		     <small>Telefono</small>
 		</div>		
 
 		<div class="col-md-1 col-12 border border-white">
-		     <span>Estatus</span>
+		     <small>Estatus</small>
 		</div>
 
 		</div> <!-- Fin Row-->
@@ -91,25 +91,25 @@ if($acceso["est_per"]=="A")
 		</div>
 
 		<div class="col-md-3 col-12 border border-white text-left">
-		     <span><?php echo $datos['nom_tal']; ?></span>
+		     <small><?php echo $datos['nom_tal']; ?></small>
 		</div>
 
 		<div class="col-md-2 col-12 border border-white text-left">
-		     <span><?php echo $datos['res_tal']; ?></span>
+		     <small><?php echo $datos['res_tal']; ?></small>
 		</div>
 
 		<div class="col-md-2 col-12 border border-white text-left">
-		     <span><?php echo $datos['nom_ciu']; ?></span>
+		     <small><?php echo $datos['nom_ciu']; ?></small>
 		</div>
 
 		<div class="col-md-2 col-12 border border-white text-left">
-		     <span><?php echo $datos['te1_tal']; ?></span>
+		     <small><?php echo $datos['te1_tal']; ?></small>
 		</div>
 
 		<div class="col-md-1 col-12 border border-white">
-		     <span>
+		     <small>
 		     	<?php echo ($datos['est_tal']=="A") ? "Activa":"Inactiva"; ?>
-		     </span>
+		     </small>
 		</div>
 		
 		<?php

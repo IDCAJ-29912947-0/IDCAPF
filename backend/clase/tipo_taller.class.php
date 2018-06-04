@@ -1,29 +1,29 @@
 <?php
 require_once("utilidad.class.php");
 
-class banco extends utilidad
+class tipo_taller extends utilidad
 {
-   public $cod_ban;
-   public $nom_ban;
-   public $est_ban;
+   public $cod_tip_tal;
+   public $nom_tip_tal;
+   public $est_tip_tal;
 
 //==============================================================================
    public function agregar(){
 
-    	$sql="insert into banco(nom_ban,est_ban)values('$this->nom_ban','$this->est_ban');";
+    	$sql="insert into tipo_taller(nom_tip_tal,est_tip_tal)values('$this->nom_tip_tal','$this->est_tip_tal');";
     	return $this->ejecutar($sql);
    }//Fin Agregar
 //==============================================================================
 
    public function modificar(){
-      $sql="update banco set nom_ban='$this->nom_ban',est_ban='$this->est_ban' where cod_ban='$this->cod_ban';";
+      $sql="update tipo_taller set nom_tip_tal='$this->nom_tip_tal',est_tip_tal='$this->est_tip_tal' where cod_tip_tal='$this->cod_tip_tal';";
    	return $this->ejecutar($sql);
    	
    }//Fin Modificar  
 //==============================================================================
 
    public function listar(){
-   		$sql="select * from banco where est_ban='$this->est_ban' order by nom_ban asc;";
+   		$sql="select * from tipo_taller where est_tip_tal='$this->est_tip_tal' order by nom_tip_tal asc;";
    		return $this->ejecutar($sql);
    	
    }//Fin Listar 
@@ -42,15 +42,15 @@ class banco extends utilidad
    }//Fin Cambio Estatus   
 //==============================================================================
 
-   public function filtrar($cod_ban,$nom_ban,$est_ban){
+   public function filtrar($cod_tip_tal,$nom_tip_tal,$est_tip_tal){
 
         $where="where 1=1";
         
-        $filtro1 = ($cod_ban!="") ? "and cod_ban=$cod_ban":"";
-        $filtro2 = ($nom_ban!="") ? "and nom_ban like '%$nom_ban%'":"";
-        $filtro3 = ($est_ban!="") ? "and est_ban='$est_ban'":"";
+        $filtro1 = ($cod_tip_tal!="") ? "and cod_tip_tal=$cod_tip_tal":"";
+        $filtro2 = ($nom_tip_tal!="") ? "and nom_tip_tal like '%$nom_tip_tal%'":"";
+        $filtro3 = ($est_tip_tal!="") ? "and est_tip_tal='$est_tip_tal'":"";
 
-        $sql="select * from banco $where $filtro1 $filtro2 $filtro3 order by nom_ban asc;"; 
+        $sql="select * from tipo_taller $where $filtro1 $filtro2 $filtro3 order by nom_tip_tal asc;"; 
         return $this->ejecutar($sql);  
 
 

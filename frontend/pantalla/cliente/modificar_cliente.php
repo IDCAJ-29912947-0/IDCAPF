@@ -36,7 +36,7 @@ $datos=$obj->extraer_dato($resultado);
 </head>
 <body>
 
-<form action="../../../backend/controlador/Cliente.php" method="POST">
+<form action="../../../backend/controlador/cliente.php" method="POST">
 
 	<div class="container">
 
@@ -101,7 +101,7 @@ $datos=$obj->extraer_dato($resultado);
 		     <label for="">Clabe Interbancaria:</label>
 		</div>
 		<div class="col-md-6 col-12">
-		    <input type="text" name="cue_cli" id="cue_cli" required="required" maxlength="20" class="form-control" placeholder="Clabe Interbancaria" value="<?php echo $datos['cue_cli'] ?>">
+		    <input type="text" name="cue_cli" id="cue_cli" required="required" maxlength="18" class="form-control" placeholder="Clabe Interbancaria" value="<?php echo $datos['cue_cli'] ?>">
 		</div>
 
 	  </div> 

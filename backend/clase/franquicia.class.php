@@ -1,29 +1,29 @@
 <?php
 require_once("utilidad.class.php");
 
-class banco extends utilidad
+class franquicia extends utilidad
 {
-   public $cod_ban;
-   public $nom_ban;
-   public $est_ban;
+   public $cod_fra;
+   public $nom_fra;
+   public $est_fra;
 
 //==============================================================================
    public function agregar(){
 
-    	$sql="insert into banco(nom_ban,est_ban)values('$this->nom_ban','$this->est_ban');";
+    	$sql="insert into franquicia(nom_fra,est_fra)values('$this->nom_fra','$this->est_fra');";
     	return $this->ejecutar($sql);
    }//Fin Agregar
 //==============================================================================
 
    public function modificar(){
-      $sql="update banco set nom_ban='$this->nom_ban',est_ban='$this->est_ban' where cod_ban='$this->cod_ban';";
+      $sql="update franquicia set nom_fra='$this->nom_fra',est_fra='$this->est_fra' where cod_fra='$this->cod_fra';";
    	return $this->ejecutar($sql);
    	
    }//Fin Modificar  
 //==============================================================================
 
    public function listar(){
-   		$sql="select * from banco where est_ban='$this->est_ban' order by nom_ban asc;";
+   		$sql="select * from franquicia where est_fra='$this->est_fra' order by nom_fra asc;";
    		return $this->ejecutar($sql);
    	
    }//Fin Listar 
@@ -42,15 +42,15 @@ class banco extends utilidad
    }//Fin Cambio Estatus   
 //==============================================================================
 
-   public function filtrar($cod_ban,$nom_ban,$est_ban){
+   public function filtrar($cod_fra,$nom_fra,$est_fra){
 
         $where="where 1=1";
         
-        $filtro1 = ($cod_ban!="") ? "and cod_ban=$cod_ban":"";
-        $filtro2 = ($nom_ban!="") ? "and nom_ban like '%$nom_ban%'":"";
-        $filtro3 = ($est_ban!="") ? "and est_ban='$est_ban'":"";
+        $filtro1 = ($cod_fra!="") ? "and cod_fra=$cod_fra":"";
+        $filtro2 = ($nom_fra!="") ? "and nom_fra like '%$nom_fra%'":"";
+        $filtro3 = ($est_fra!="") ? "and est_fra='$est_fra'":"";
 
-        $sql="select * from banco $where $filtro1 $filtro2 $filtro3 order by nom_ban asc;"; 
+        $sql="select * from franquicia $where $filtro1 $filtro2 $filtro3 order by nom_fra asc;"; 
         return $this->ejecutar($sql);  
 
 
