@@ -44,8 +44,8 @@ $datos=$obj->extraer_dato($resultado);
 		<div class="col-md-3 col-12 align-self-center">
 		     <label for="">Cédula:</label>
 		</div>
-		<div class="col-md-4 col-12">
-		    <input type="text" name="dni_emp" id="dni_emp" required="required" maxlength="15" class="form-control" placeholder="Cédula del Empleado" onkeyup="return solo_numeros();" 
+		<div class="col-md-9 col-12">
+		    <input type="text" name="dni_emp" id="dni_emp" required="required" maxlength="15" class="form-control" placeholder="Cédula del Empleado" pattern="[a-zA-Z0-9 ]+" title="Solo valores Alfa-Númericos"
 		    value="<?php echo $datos['dni_emp']; ?>">
 		</div>
 
@@ -56,8 +56,8 @@ $datos=$obj->extraer_dato($resultado);
 		<div class="col-md-3 col-12 align-self-center">
 		     <label for="">Nombres:</label>
 		</div>
-		<div class="col-md-4 col-12">
-		    <input type="text" name="nom_emp" id="nom_emp" required="required" maxlength="25" class="form-control text-uppercase" placeholder="Nombre del Empleado" onkeyup="return solo_letras();" value="<?php echo $datos['nom_emp']; ?>">
+		<div class="col-md-9 col-12">
+		    <input type="text" name="nom_emp" id="nom_emp" required="required" maxlength="25" class="form-control text-uppercase" placeholder="Nombre del Empleado" pattern="[a-zA-Z ]+" title="Solo Letras" value="<?php echo $datos['nom_emp']; ?>">
 		</div>
 
 	  </div>
@@ -67,8 +67,8 @@ $datos=$obj->extraer_dato($resultado);
 		<div class="col-md-3 col-12 align-self-center">
 		     <label for="">Apellidos:</label>
 		</div>
-		<div class="col-md-4 col-12">
-		    <input type="text" name="ape_emp" id="ape_emp" required="required" maxlength="25" class="form-control text-uppercase" placeholder="Apellido del Empleado" onkeyup="return solo_letras();" value="<?php echo $datos['ape_emp']; ?>">
+		<div class="col-md-9 col-12">
+		    <input type="text" name="ape_emp" id="ape_emp" required="required" maxlength="25" class="form-control text-uppercase" placeholder="Apellido del Empleado" pattern="[a-zA-Z ]+" title="Solo Letras" value="<?php echo $datos['ape_emp']; ?>">
 		</div>
 
 	  </div> 
@@ -78,7 +78,7 @@ $datos=$obj->extraer_dato($resultado);
 		<div class="col-md-3 col-12 align-self-center">
 		     <label for="">Sexo:</label>
 		</div>
-		<div class="col-md-4 col-12">
+		<div class="col-md-9 col-12">
 		  <div class="form-check-inline">
 						<label class="form-check-label">
 						<?php
@@ -103,8 +103,8 @@ $datos=$obj->extraer_dato($resultado);
 		<div class="col-md-3 col-12 align-self-center">
 		     <label for="">Email:</label>
 		</div>
-		<div class="col-md-6 col-12">
-		    <input type="text" name="ema_emp" id="ema_emp" required="required" maxlength="80" class="form-control text-uppercase" placeholder="Email del Empleado" onkeyup="return solo_email();" value="<?php echo $datos['ema_emp']; ?>">
+		<div class="col-md-9 col-12">
+		    <input type="email" name="ema_emp" id="ema_emp" required="required" maxlength="80" class="form-control text-uppercase" placeholder="Email del Empleado" value="<?php echo $datos['ema_emp']; ?>">
 		</div>
 
 	  </div> 
@@ -114,8 +114,8 @@ $datos=$obj->extraer_dato($resultado);
 	  <div class="col-md-3 col-12 align-self-center">
 		     <label for="">Número de Celular:</label>
 		</div>
-		<div class="col-md-6 col-12">
-		    <input type="text" name="te1_emp" id="te1_emp" required="required" maxlength="15" class="form-control" placeholder="Preferiblemente con Whatsapp" onkeyup="return solo_numeros();" value="<?php echo $datos['te1_emp']; ?>">
+		<div class="col-md-9 col-12">
+		    <input type="text" name="te1_emp" id="te1_emp" required="required" maxlength="15" class="form-control" placeholder="Preferiblemente con Whatsapp" pattern="[0-9]+" title="Solo valores Númericos"value="<?php echo $datos['te1_emp']; ?>">
 		</div>
 
 	  </div> 
@@ -125,8 +125,8 @@ $datos=$obj->extraer_dato($resultado);
 	  <div class="col-md-3 col-12 align-self-center">
 		     <label for="">Teléfono Secundario:</label>
 		</div>
-		<div class="col-md-6 col-12">
-		    <input type="text" name="te2_emp" id="te2_emp" maxlength="15" class="form-control" placeholder="Teléfono Secundario" onkeyup="return solo_numeros();" value="<?php echo $datos['te2_emp']; ?>">
+		<div class="col-md-9 col-12">
+		    <input type="text" name="te2_emp" id="te2_emp" maxlength="15" class="form-control" placeholder="Teléfono Secundario" pattern="[0-9]+" title="Solo valores Númericos"value="<?php echo $datos['te2_emp']; ?>">
 		</div>
 
 	  </div> 
@@ -168,8 +168,9 @@ $datos=$obj->extraer_dato($resultado);
 	     <div class="col-md-3 col-12 align-self-center">
 		     <label for="">Estatus:</label>
 		</div>
-	  <div class="col-md-4 col-12">
-	     <select name='est_emp' id='est_emp' class='form-control'>
+	  <div class="col-md-9 col-12">
+	     <select name='est_emp' id='est_emp' class='form-control' required="">
+	     <option value="">Seleccione...</option>
 		 <?php
 		 $selected = ($datos['est_emp']=='A') ? "selected":"";
 		 echo "<option value='A' $selected>Activo</option>";

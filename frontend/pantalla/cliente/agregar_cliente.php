@@ -42,7 +42,7 @@ if($acceso["est_per"]=="A")
 		     <label for="">Nombre Comercial:</label>
 		</div>
 		<div class="col-md-8 col-12">
-		    <input type="text" name="com_cli" id="com_cli" required="required" maxlength="80" class="form-control" placeholder="Nombre Comercial" onkeyup="return solo_letras();">
+		    <input type="text" name="com_cli" id="com_cli" required="required" maxlength="80" class="form-control" placeholder="Nombre Comercial" pattern="[a-zA-Z0-9 ]+" title="Solo valores Alfa-Númericos" required>
 		</div>
 
 	  </div>
@@ -52,8 +52,8 @@ if($acceso["est_per"]=="A")
 		<div class="col-md-4 col-12 align-self-center">
 		     <label for="">RFC:</label>
 		</div>
-		<div class="col-md-4 col-12">
-		    <input type="text" name="rfc_cli" id="rfc_cli" required="required" maxlength="15" class="form-control" placeholder="RFC" onkeyup="return solo_numeros();">
+		<div class="col-md-8 col-12">
+		    <input type="text" name="rfc_cli" id="rfc_cli" required="required" maxlength="15" class="form-control" placeholder="RFC" pattern="[a-zsA-Z0-9]+" title="Solo valores Alfa-Númericos" required>
 		</div>
 
 	  </div> 
@@ -63,9 +63,9 @@ if($acceso["est_per"]=="A")
 		<div class="col-md-4 col-12 align-self-center text-left">
 		     <label for="">Banco:</label>
 		</div>
-		<div class="col-md-4 col-12">
-		    <select name="fky_banco" id="fky_banco" class="form-control">
-		    <option value="X">Seleccione...</option>
+		<div class="col-md-8 col-12">
+		    <select name="fky_banco" id="fky_banco" class="form-control" required="">
+		    <option value="">Seleccione...</option>
 		    <?php
 		    $objBanco->asignar_valor("est_ban","A");
 		    $pun_ban=$objBanco->listar();
@@ -85,8 +85,8 @@ if($acceso["est_per"]=="A")
 		<div class="col-md-4 col-12 align-self-center">
 		     <label for="">Clabe Interbancaria:</label>
 		</div>
-		<div class="col-md-6 col-12">
-		    <input type="text" name="cue_cli" id="cue_cli" required="required" maxlength="18" class="form-control" placeholder="Clabe Interbancaria">
+		<div class="col-md-8 col-12">
+		    <input type="text" name="cue_cli" id="cue_cli" required="required" maxlength="20" class="form-control" placeholder="Clabe Interbancaria" required>
 		</div>
 
 	  </div> 
@@ -96,8 +96,8 @@ if($acceso["est_per"]=="A")
 		<div class="col-md-4 col-12 align-self-center">
 		     <label for="">Filiales:</label>
 		</div>
-		<div class="col-md-6 col-12">
-		    <input type="text" name="fil_cli" id="fil_cli" required="required" maxlength="20" class="form-control" placeholder="Filiales">
+		<div class="col-md-8 col-12">
+		    <input type="text" name="fil_cli" id="fil_cli" required="required" maxlength="35" class="form-control" placeholder="Filiales" pattern="[a-zA-Z0-9 ]+" title="Solo valores Alfa-Númericos, no se permiten caracteres especiales." required>
 		</div>
 
 	  </div> 	
@@ -109,8 +109,8 @@ if($acceso["est_per"]=="A")
 		<div class="col-md-4 col-12 align-self-center">
 		     <label for="">Crédito:</label>
 		</div>
-		<div class="col-md-4 col-12">
-		    <input type="text" name="cre_cli" id="cre_cli" required="required" maxlength="10" class="form-control" placeholder="Credito en Pesos">
+		<div class="col-md-8 col-12">
+		    <input type="text" name="cre_cli" id="cre_cli" required="required" maxlength="10" class="form-control" placeholder="Crédito en Pesos" pattern="[a-zA-Z0-9.]+" title="Solo valores Númericos, el separador de decimales a usar será el punto (.)">
 		</div>
 
 	  </div>
@@ -121,8 +121,8 @@ if($acceso["est_per"]=="A")
 		     <label for="">Factor de Utilidad:</label>
 		</div>
 		<div class="col-md-2 col-12">
-		    <select name='fac_cli' id='fac_cli' class="form-control">
-		    <option value="X">Seleccione..</option>
+		    <select name='fac_cli' id='fac_cli' class="form-control" required="">
+		    <option value="">Seleccione..</option>
 		    <?php
 		    	for ($i=0; $i < 100 ; $i++) { 
 		    		
@@ -198,8 +198,8 @@ if($acceso["est_per"]=="A")
 		     <label for="">Ejecutivo Asociado:</label>
 		</div>	 	
 	 <div class="col-md-8 col-12">
-			   <select name="fky_empleado" id="fky_empleado" class="form-control">
-			   <option>Seleccione...</option>
+			   <select name="fky_empleado" id="fky_empleado" class="form-control" required="">
+			   <option value="">Seleccione...</option>
 			   <?php
 			   $objEmpleado->est_emp="A";
 			   $emp=$objEmpleado->listar();
@@ -216,9 +216,10 @@ if($acceso["est_per"]=="A")
 	     <div class="col-md-4 col-12 align-self-center">
 		     <label for="">Estatus:</label>
 		</div>
-	    <div class="col-md-4 col-12">
-		<select name="est_cli" id="est_cli" class="form-control">
-			<option value="A" selected="">Activo</option>
+	    <div class="col-md-8 col-12">
+		<select name="est_cli" id="est_cli" class="form-control" required="">
+			<option value="">Seleccione...</option>
+			<option value="A">Activo</option>
 			<option value="I">Inactivo</option>	
 		</select>
 		</div>

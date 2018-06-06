@@ -20,13 +20,13 @@
 		<div class="row">
 			<div class="col-4">Nombre:</div>
 			<div class="col-8">
-				<input type="text" name="nom_rol" placeholder="Nombre del Rol" class="form-control">
+				<input type="text" name="nom_rol" placeholder="Nombre del Rol" maxlength="25" class="form-control" pattern="[a-zA-Z0-9 ]+" title="Solo valores Alfa-Númericos" required="">
 			</div>
 		</div>
 		<div class="row mt-2">
 			<div class="col-4">Estatus:</div>
 			<div class="col-8">
-				<select name="est_rol" id="est_rol" class="form-control">
+				<select name="est_rol" id="est_rol" class="form-control" required="">
 					<option value="">Seleccione...</option>
 					<option value="A">Activo</option>
 					<option value="I">Inactivo</option>

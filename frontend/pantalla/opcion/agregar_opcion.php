@@ -21,12 +21,13 @@
 			</div>
 			<div class="row mt-2">
 				<div class="col-4">Nombre:</div>
-				<div class="col-8"><input type="text" name="nom_opc" id="nom_opc" placeholder="Nombre de la opcion" class="form-control"></div>
+				<div class="col-8"><input type="text" name="nom_opc" id="nom_opc" placeholder="Nombre de la opcion" class="form-control" pattern="[a-zA-Z0-9/._? ]+" title="Solo valores Alfa-Númericos y caracteres especiales cómo ( / ) ( . ) ( _ ) ( ? )" required=""></div>
 			</div>
 			<div class="row mt-2">
-				<div class="col-4">Modulo</div>
+				<div class="col-4">Modulo:</div>
 				<div class="col-8">
-					<select name="fky_modulo" id="fky_modulo" class="form-control">
+					<select name="fky_modulo" id="fky_modulo" class="form-control"  required="">
+					<option value="">Seleccione...</option>
 					<?php 
 							$ret=$obj_mod->listar();
 							while(($mod=$obj_mod->extraer_dato($ret))>0)
@@ -42,13 +43,13 @@
 			<div class="row mt-2">
 				<div class="col-4">URL:</div>
 				<div class="col-8">
-					<input type="text" name="url_opc" id="url_opc" placeholder="URL de la opcion" class="form-control">
+					<input type="text" name="url_opc" id="url_opc" placeholder="URL de la opcion" class="form-control" pattern="[a-zA-Z0-9/._?-]+" title="Solo valores Alfa-Númericos y caracteres especiales cómo ( / ) ( . ) ( _ ) ( ? ) ( - )" required="">
 				</div>
 			</div>
 			<div class="row mt-2">
 				<div class="col-4">Estatus:</div>
 				<div class="col-8">
-					<select name="est_opc" id="est_opc" class="form-control">
+					<select name="est_opc" id="est_opc" class="form-control" required="">
 						<option value="">Seleccione...</option>
 						<option value="A">Activo</option>
 						<option value="I">Inactivo</option>

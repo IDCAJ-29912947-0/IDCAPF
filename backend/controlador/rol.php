@@ -19,7 +19,7 @@ switch($_REQUEST["accion"])
 		$res=$obj_rol->agregar();
 		if($res==true)
 		{
-			$obj_rol->mensaje("success","Rol","agregar");
+			$obj_rol->mensaje("success","Rol agregado correctamente.","agregar");
 			$id=$obj_rol->ultimo_id();
 			if($id>0) //Guardamos en auditoria
               {
@@ -30,7 +30,7 @@ switch($_REQUEST["accion"])
               }			
 		}else
 		{
-			$obj_rol->mensaje("danger","Rol","agregar");	
+			$obj_rol->mensaje("danger","Error al agregar Rol.","agregar");	
 		}
 		break;
 

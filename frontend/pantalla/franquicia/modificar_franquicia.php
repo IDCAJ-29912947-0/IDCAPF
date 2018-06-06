@@ -45,11 +45,11 @@ $datos=$obj->extraer_dato($resultado);
 
 	  <div class="row mt-2 bg-light">
 
-		<div class="col-md-2 col-12 align-self-center">
+		<div class="col-md-3 col-12 align-self-center">
 		     <label for="">Nombre:</label>
 		</div>
-		<div class="col-md-8 col-12">
-		    <input type="text" name="nom_fra" id="nom_fra" required="required" maxlength="50" class="form-control text-capitalize" placeholder="Nombre de la Franquicia" onkeyup="return solo_numeros();" 
+		<div class="col-md-9 col-12">
+		    <input type="text" name="nom_fra" id="nom_fra" required="required" maxlength="50" class="form-control text-capitalize" placeholder="Nombre de la Franquicia" pattern="[a-zA-Z0-9,.-/ ]+" title="Solo valores Alfa-Númericos"
 		    value="<?php echo $datos['nom_fra']; ?>">
 		</div>
 
@@ -57,11 +57,12 @@ $datos=$obj->extraer_dato($resultado);
 
 
 	  <div class="row mt-2 bg-light">
-	     <div class="col-md-2 col-12 align-self-center">
+	     <div class="col-md-3 col-12 align-self-center">
 		     <label for="">Estatus:</label>
 		</div>
-	  <div class="col-md-4 col-12">
-	     <select name='est_fra' id='est_fra' class='form-control'>
+	  <div class="col-md-9 col-12">
+	     <select name='est_fra' id='est_fra' class='form-control' required="">
+	     <option value="">Seleccione...</option>
 		 <?php
 		 $selected = ($datos['est_fra']=='A') ? "selected":"";
 		 echo "<option value='A' $selected>Activo</option>";

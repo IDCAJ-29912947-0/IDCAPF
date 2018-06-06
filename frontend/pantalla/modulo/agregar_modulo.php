@@ -23,20 +23,20 @@
 			<div class="row mt-2">
 				<div class="col-4">Nombre:</div>
 				<div class="col-8">
-					<input type="text" name="nom_mod" id="nom_mod" placeholder="Nombre del Módulo" class="form-control">
+					<input type="text" name="nom_mod" id="nom_mod" maxlength="25" placeholder="Nombre del Módulo" class="form-control" pattern="[a-zA-Z0-9 ]+" title="Solo valores Alfa-Númericos" required>
 				</div>
 			</div>
 			<div class="row mt-2">
 				<div class="col-4">Url del Módulo:</div>
 				<div class="col-8">
-					<input type="text" name="url_mod" id="url_mod" placeholder="modulo/" class="form-control">
+					<input type="text" name="url_mod" id="url_mod" placeholder="modulo/" maxlength="50" class="form-control" pattern="[a-zA-Z0-9/._?]+" title="Solo valores Alfa-Númericos y caracteres especiales cómo ( / ) ( . ) ( _ ) ( ? )" required>
 				</div>
 			</div>
 			<div class="row mt-2">
 				<div class="col-4">Estatus:</div>
 				<div class="col-8">
-					<select name="est_mod" id="est_mod" class="form-control">
-						<option value="X">Seleccione...</option>
+					<select name="est_mod" id="est_mod" class="form-control" required="">
+						<option value="">Seleccione..</option>
 						<option value="A">Activo</option>
 						<option value="I">Inactivo</option>
 					</select>

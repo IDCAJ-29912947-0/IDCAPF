@@ -1,0 +1,76 @@
+1;Aguascalientes;1;A
+2;Ensenada;2;A
+3;Mexicali;2;A
+4;Tijuana;2;A
+5;La Paz;3;A
+6;Los Cabos;3;A
+7;Campeche;4;A
+8;Ciudad del Carmen;4;A
+10;Tuxtla Gutiérrez;5;A
+11;Chihuahua;6;A
+12;Juárez;6;A
+13;La Laguna;7;A
+14;Monclova-Frontera;7;A
+15;Piedras Negras;7;A
+16;Saltillo;7;A
+17;Colima-Villa de Álvarez;8;A
+18;Manzanillo;8;A
+19;Tecomán;8;A
+20;Valle de México;9;A
+21;Durango;10;A
+22;Celaya;11;A
+23;Guanajuato;11;A
+24;Irapuato;11;A
+25;La Piedad-Pénjamo;11;A
+26;León;11;A
+27;Salamanca;11;A
+28;San Francisco del Rincón;11;A
+29;Acapulco;12;A
+30;Chilpancingo;12;A
+31;Pachuca;13;A
+32;Tula;13;A
+33;Tulancingo;13;A
+34;Guadalajara;14;A
+35;Ocotlán;14;A
+36;Puerto Vallarta;14;A
+37;Morelia;15;A
+38;Uruapan;15;A
+39;Zamora-Jacona;15;A
+40;Cuautla;16;A
+41;Cuernavaca;16;A
+42;Toluca;17;A
+43;Tepic;18;A
+44;Monterrey;19;A
+45;Oaxaca;20;A
+46;Tehuantepec-Salina Cruz;20;A
+47;Puebla-Tlaxcala;21;A
+48;Tehuacán;21;A
+49;Querétaro;22;A
+50;San Juan del Río;22;A
+51;Cancún;23;A
+52;Chetumal;23;A
+53;Rioverde-Ciudad Fernández;24;A
+54;San Luis Potosí-Soledad;24;A
+55;Culiacán;25;A
+56;Los Mochis;25;A
+57;Mazatlán;25;A
+58;Ciudad Obregón;26;A
+59;Guaymas;26;A
+60;Hermosillo;26;A
+61;Cárdenas;27;A
+62;Villahermosa;27;A
+63;Ciudad Victoria;28;A
+64;Matamoros;28;A
+65;Nuevo Laredo;28;A
+66;Reynosa-Río Bravo;28;A
+67;Tampico-Pánuco;28;A
+68;Tlaxcala-Apizaco;29;A
+69;Coatzacoalcos;30;A
+70;Córdoba;30;A
+71;Minatitlán;30;A
+72;Orizaba;30;A
+73;Poza Rica;30;A
+74;Veracruz;30;A
+75;Xalapa;30;A
+76;Mérida;31;A
+77;Zacatecas-Guadalupe;32;A

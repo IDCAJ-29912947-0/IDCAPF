@@ -40,29 +40,29 @@ if($acceso["est_per"]=="A")
 
 	  <div class="row mt-2 bg-light">
 
-		<div class="col-md-2 col-12 align-self-center text-left">
+		<div class="col-md-3 col-12 align-self-center text-left">
 		     <label for="">Nombre:</label>
 		</div>
-		<div class="col-md-8 col-12">
-		    <input type="text" name="nom_ciu" id="nom_ciu" required="required" maxlength="50" class="form-control" placeholder="Nombre del Estado">
+		<div class="col-md-9 col-12">
+		    <input type="text" name="nom_ciu" id="nom_ciu" required="required" maxlength="35" class="form-control" placeholder="Nombre de la Ciudad" pattern="[a-zA-Z0-9 ]+" title="Solo valores Alfa-Númericos" required>
 		</div>
 
 	  </div>
 
 
 	 <div class="row mt-2 bg-light">
-		<div class="col-md-2 col-12 align-self-center text-left">
+		<div class="col-md-3 col-12 align-self-center text-left">
 		     <label for="">Estado:</label>
 		</div>	 	
-	 <div class="col-md-8 col-12">
-			   <select name="fky_estado" id="fky_estado" class="form-control">
-			   <option>Seleccione...</option>
+	 <div class="col-md-9 col-12">
+			   <select name="fky_estado" id="fky_estado" class="form-control" required="">
+			   <option value="">Seleccione...</option>
 			   <?php
 			   $objEstado->est_est="A";
 			   $est=$objEstado->listar();
 			   while(($estado=$obj->extraer_dato($est))>0)
 			   {	
-			   		echo "<option value='$estado[cod_est]'>$estado[nom_est]</option>";
+			   		echo "<option value='$estado[cod_est]'>$estado[nom_est]</option> ";
 			   }
 			   ?>
 			   </select>
@@ -70,13 +70,14 @@ if($acceso["est_per"]=="A")
 	</div>
 
 	  <div class="row mt-2 bg-light">
-	     <div class="col-md-2 col-12 align-self-center text-left">
+	     <div class="col-md-3 col-12 align-self-center text-left" required="">
 		     <label for="">Estatus:</label>
 		</div>
-	    <div class="col-md-4 col-12">
+	    <div class="col-md-9 col-12">
 		<select name="est_ciu" id="est_ciu" class="form-control">
-			<option value="A" selected="">Activo</option>
-			<option value="I">Inactivo</option>	
+			<option value="">Seleccione...</option>
+			<option value="A">Activa</option>
+			<option value="I">Inactiva</option>	
 		</select>
 		</div>
 	   </div>

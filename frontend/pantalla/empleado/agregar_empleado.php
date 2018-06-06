@@ -37,8 +37,8 @@ if($acceso["est_per"]=="A")
 		<div class="col-md-3 col-12 align-self-center">
 		     <label for="">Identificación:</label>
 		</div>
-		<div class="col-md-4 col-12">
-		    <input type="text" name="ide_emp" id="ide_emp" required="required" maxlength="15" class="form-control" placeholder="Documento del Empleado" onkeyup="return solo_numeros();">
+		<div class="col-md-9 col-12">
+		    <input type="text" name="ide_emp" id="ide_emp" required="required" maxlength="15" class="form-control" placeholder="Documento del Empleado" pattern="[a-zA-Z0-9 ]+" title="Solo valores Alfa-Númericos">
 		</div>
 
 	  </div> 
@@ -48,8 +48,8 @@ if($acceso["est_per"]=="A")
 		<div class="col-md-3 col-12 align-self-center">
 		     <label for="">Nombres:</label>
 		</div>
-		<div class="col-md-4 col-12">
-		    <input type="text" name="nom_emp" id="nom_emp" required="required" maxlength="25" class="form-control" placeholder="Nombre del Empleado" onkeyup="return solo_letras();">
+		<div class="col-md-9 col-12">
+		    <input type="text" name="nom_emp" id="nom_emp" required="required" maxlength="25" class="form-control" placeholder="Nombre del Empleado" pattern="[a-zA-Z ]+" title="Solo Letras">
 		</div>
 
 	  </div>
@@ -59,8 +59,8 @@ if($acceso["est_per"]=="A")
 		<div class="col-md-3 col-12 align-self-center">
 		     <label for="">Apellidos:</label>
 		</div>
-		<div class="col-md-4 col-12">
-		    <input type="text" name="ape_emp" id="ape_emp" required="required" maxlength="25" class="form-control" placeholder="Apellido del Empleado" onkeyup="return solo_letras();">
+		<div class="col-md-9 col-12">
+		    <input type="text" name="ape_emp" id="ape_emp" required="required" maxlength="25" class="form-control" placeholder="Apellido del Empleado" pattern="[a-zA-Z ]+" title="Solo Letras">
 		</div>
 
 	  </div> 
@@ -70,7 +70,7 @@ if($acceso["est_per"]=="A")
 		<div class="col-md-3 col-12 align-self-center">
 		     <label for="">Sexo:</label>
 		</div>
-		<div class="col-md-4 col-12">
+		<div class="col-md-9 col-12">
 		  <div class="form-check-inline">
 						<label class="form-check-label">
 							<input type="radio" name="sex_emp" id="sex_emp1" class="form-check-input mr-2" value="M">Masculino
@@ -89,8 +89,8 @@ if($acceso["est_per"]=="A")
 		<div class="col-md-3 col-12 align-self-center">
 		     <label for="">Email:</label>
 		</div>
-		<div class="col-md-6 col-12">
-		    <input type="text" name="ema_emp" id="ema_emp" required="required" maxlength="80" class="form-control" placeholder="Email del Empleado" onkeyup="return solo_email();">
+		<div class="col-md-9 col-12">
+		    <input type="email" name="ema_emp" id="ema_emp" required="required" maxlength="80" class="form-control" placeholder="Email del Empleado">
 		</div>
 
 	  </div> 
@@ -100,8 +100,8 @@ if($acceso["est_per"]=="A")
 	  <div class="col-md-3 col-12 align-self-center">
 		     <label for="">Teléfono Principal:</label>
 		</div>
-		<div class="col-md-6 col-12">
-		    <input type="text" name="te1_emp" id="te1_emp" required="required" maxlength="15" class="form-control" placeholder="Preferiblemente con Whatsapp" onkeyup="return solo_numeros();">
+		<div class="col-md-9 col-12">
+		    <input type="text" name="te1_emp" id="te1_emp" required="required" maxlength="15" class="form-control" placeholder="Preferiblemente con Whatsapp" pattern="[0-9]+" title="Solo valores Númericos">
 		</div>
 
 	  </div> 
@@ -111,8 +111,8 @@ if($acceso["est_per"]=="A")
 	  <div class="col-md-3 col-12 align-self-center">
 		     <label for="">Teléfono Secundario:</label>
 		</div>
-		<div class="col-md-6 col-12">
-		    <input type="text" name="te2_emp" id="te2_emp" maxlength="15" class="form-control" placeholder="Teléfono Secundario" onkeyup="return solo_numeros();">
+		<div class="col-md-9 col-12">
+		    <input type="text" name="te2_emp" id="te2_emp" maxlength="15" class="form-control" placeholder="Teléfono Secundario" pattern="[0-9]+" title="Solo valores Númericos" required="">
 		</div>
 
 	  </div> 
@@ -151,9 +151,10 @@ if($acceso["est_per"]=="A")
 	     <div class="col-md-3 col-12 align-self-center">
 		     <label for="">Estatus:</label>
 		</div>
-	    <div class="col-md-4 col-12">
-		<select name="est_emp" id="est_emp" class="form-control">
-			<option value="A" selected="">Activo</option>
+	    <div class="col-md-9 col-12">
+		<select name="est_emp" id="est_emp" class="form-control" required="">
+			<option value="">Seleccione...</option>
+			<option value="A">Activo</option>
 			<option value="I">Inactivo</option>	
 		</select>
 		</div>

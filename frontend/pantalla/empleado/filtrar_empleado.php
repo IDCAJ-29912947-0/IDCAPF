@@ -34,33 +34,33 @@ if($acceso["est_per"]=="A")
 
 	  <div class="row mt-2 bg-light"">
 
-		<div class="col-md-2 col-12 align-self-center">
+		<div class="col-md-3 col-12 align-self-center">
 		     <label for="">Identificación:</label>
 		</div>
-		<div class="col-md-4 col-12">
-		    <input type="text" name="ide_emp" id="ide_emp" maxlength="15" class="form-control" placeholder="Cédula del Empleado" onkeyup="return solo_numeros();">
+		<div class="col-md-9 col-12">
+		    <input type="text" name="ide_emp" id="ide_emp" maxlength="15" class="form-control" placeholder="Cédula del Empleado" pattern="[0-9]+" title="Solo valores Númericos">
 		</div>
 
 	  </div> 
 
 	  <div class="row mt-2 bg-light">
 
-		<div class="col-md-2 col-12 align-self-center">
+		<div class="col-md-3 col-12 align-self-center">
 		     <label for="">Nombres:</label>
 		</div>
-		<div class="col-md-4 col-12">
-		    <input type="text" name="nom_emp" id="nom_emp" maxlength="25" class="form-control" placeholder="Nombre del Empleado" onkeyup="return solo_letras();">
+		<div class="col-md-9 col-12">
+		    <input type="text" name="nom_emp" id="nom_emp" maxlength="25" class="form-control" placeholder="Nombre del Empleado" pattern="[a-zA-Z ]+" title="Solo Letras">
 		</div>
 
 	  </div>
 
 	   <div class="row mt-2 bg-light">
 
-		<div class="col-md-2 col-12 align-self-center">
+		<div class="col-md-3 col-12 align-self-center">
 		     <label for="">Apellidos:</label>
 		</div>
-		<div class="col-md-4 col-12">
-		    <input type="text" name="ape_emp" id="ape_emp" maxlength="25" class="form-control" placeholder="Apellido del Empleado" onkeyup="return solo_letras();">
+		<div class="col-md-9 col-12">
+		    <input type="text" name="ape_emp" id="ape_emp" maxlength="25" class="form-control" placeholder="Apellido del Empleado" pattern="[a-zA-Z ]+" title="Solo Letras">
 		</div>
 
 	  </div> 

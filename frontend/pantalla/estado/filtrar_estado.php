@@ -37,11 +37,11 @@ if($acceso["est_per"]=="A")
 
 	  <div class="row mt-2 bg-light">
 
-		<div class="col-md-2 col-12 align-self-center">
+		<div class="col-md-3 col-12 align-self-center">
 		     <label for="">Nombre:</label>
 		</div>
-		<div class="col-md-8 col-12">
-		    <input type="text" name="nom_est" id="nom_est" maxlength="50" class="form-control" placeholder="Nombre del Estado" onkeyup="return solo_letras();">
+		<div class="col-md-9 col-12">
+		    <input type="text" name="nom_est" id="nom_est" maxlength="35" class="form-control" placeholder="Nombre del Estado" pattern="[a-zA-Z0-9 ]+" title="Solo valores Alfa-Númericos" required">
 		</div>
 
 	  </div>

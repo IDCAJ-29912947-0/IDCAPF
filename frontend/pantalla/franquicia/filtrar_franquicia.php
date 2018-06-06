@@ -37,12 +37,11 @@ if($acceso["est_per"]=="A")
 
 	  <div class="row mt-2 bg-light">
 
-		<div class="col-md-2 col-12 align-self-center">
+		<div class="col-md-3 col-12 align-self-center">
 		     <label for="">Nombre:</label>
 		</div>
-		<div class="col-md-8 col-12">
-		    <input type="text" name="nom_fra" id="nom_fra" maxlength="50" class="form-control" placeholder="Nombre de la Franquicia" 
-		    onkeyup="return solo_letras();">
+		<div class="col-md-9 col-12">
+		    <input type="text" name="nom_fra" id="nom_fra" maxlength="50" class="form-control" placeholder="Nombre de la Franquicia" pattern="[a-zA-Z0-9,.-/ ]+" title="Solo valores Alfa-Númericos">
 		</div>
 
 	  </div>

@@ -39,7 +39,7 @@ if($acceso["est_per"]=="A")
 		     <label for="">Nombre:</label>
 		</div>
 		<div class="col-md-8 col-12">
-		    <input type="text" name="nom_tal" id="nom_tal" maxlength="50" class="form-control" placeholder="Nombre del Taller">
+		    <input type="text" name="nom_tal" id="nom_tal" maxlength="50" class="form-control" placeholder="Nombre del Taller" pattern="[a-zA-Z0-9 ]+" title="Solo valores Alfa-Númericos">
 		</div>
 
 	  </div>

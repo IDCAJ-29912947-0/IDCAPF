@@ -62,7 +62,7 @@ $datos=$obj->extraer_dato($resultado);
 		<div class="col-md-4 col-12 align-self-center">
 		     <label for="">RFC:</label>
 		</div>
-		<div class="col-md-4 col-12">
+		<div class="col-md-8 col-12">
 		    <input type="text" name="rfc_cli" id="rfc_cli" required="required" maxlength="15" class="form-control" placeholder="RFC" onkeyup="return solo_numeros();" value="<?php echo $datos['rfc_cli'] ?>">
 		</div>
 
@@ -73,9 +73,9 @@ $datos=$obj->extraer_dato($resultado);
 		<div class="col-md-4 col-12 align-self-center text-left">
 		     <label for="">Banco:</label>
 		</div>
-		<div class="col-md-4 col-12">
-		    <select name="fky_banco" id="fky_banco" class="form-control">
-		    <option value="X">Seleccione...</option>
+		<div class="col-md-8 col-12">
+		    <select name="fky_banco" id="fky_banco" class="form-control" required="">
+		    <option value="">Seleccione...</option>
 		    <?php
 		    $objBanco->asignar_valor("est_ban","A");
 		    $pun_ban=$objBanco->listar();
@@ -100,7 +100,7 @@ $datos=$obj->extraer_dato($resultado);
 		<div class="col-md-4 col-12 align-self-center">
 		     <label for="">Clabe Interbancaria:</label>
 		</div>
-		<div class="col-md-6 col-12">
+		<div class="col-md-8 col-12">
 		    <input type="text" name="cue_cli" id="cue_cli" required="required" maxlength="18" class="form-control" placeholder="Clabe Interbancaria" value="<?php echo $datos['cue_cli'] ?>">
 		</div>
 
@@ -111,7 +111,7 @@ $datos=$obj->extraer_dato($resultado);
 		<div class="col-md-4 col-12 align-self-center">
 		     <label for="">Filiales:</label>
 		</div>
-		<div class="col-md-6 col-12">
+		<div class="col-md-8 col-12">
 		    <input type="text" name="fil_cli" id="fil_cli" required="required" maxlength="20" class="form-control" placeholder="Filiales"  value="<?php echo $datos['fil_cli'] ?>">
 		</div>
 
@@ -122,7 +122,7 @@ $datos=$obj->extraer_dato($resultado);
 		<div class="col-md-4 col-12 align-self-center">
 		     <label for="">Crédito:</label>
 		</div>
-		<div class="col-md-4 col-12">
+		<div class="col-md-8 col-12">
 		    <input type="text" name="cre_cli" id="cre_cli" required="required" maxlength="10" class="form-control" placeholder="Credito" value="<?php echo $datos['cre_cli'] ?>">
 		</div>
 
@@ -201,8 +201,8 @@ $datos=$obj->extraer_dato($resultado);
 		     <label for="">Ejecutivo Asociado:</label>
 		</div>	 	
 	 <div class="col-md-8 col-12">
-			   <select name="fky_empleado" id="fky_empleado" class="form-control">
-			   <option>Seleccione...</option>
+			   <select name="fky_empleado" id="fky_empleado" class="form-control" required="">
+			   <option value="">Seleccione...</option>
 			   <?php
 			   $objEmpleado->est_emp="A";
 			   $emp=$objEmpleado->listar();
@@ -223,9 +223,10 @@ $datos=$obj->extraer_dato($resultado);
 	     <div class="col-md-4 col-12 align-self-center">
 		     <label for="">Estatus:</label>
 		</div>
-	    <div class="col-md-4 col-12">
-		<select name="est_cli" id="est_cli" class="form-control">
-			<option value="A" selected="">Activo</option>
+	    <div class="col-md-8 col-12">
+		<select name="est_cli" id="est_cli" class="form-control" required="">
+			<option value="">Seleccione...</option>
+			<option value="A">Activo</option>
 			<option value="I">Inactivo</option>	
 		</select>
 		</div>

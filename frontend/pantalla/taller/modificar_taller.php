@@ -55,8 +55,8 @@ if($acceso["est_per"]=="A")
 		<div class="col-md-3 col-12 align-self-center">
 		     <label for="">Nombre:</label>
 		</div>
-		<div class="col-md-6 col-12">
-		    <input type="text" name="nom_tal" id="nom_tal" required="required" maxlength="50" class="form-control" placeholder="Nombre del Taller" onkeyup="return solo_letras();" value="<?php echo $taller['nom_tal'] ?>">
+		<div class="col-md-9 col-12">
+		    <input type="text" name="nom_tal" id="nom_tal" required="required" maxlength="50" class="form-control" placeholder="Nombre del Taller" pattern="[a-zA-Z0-9 ]+" title="Solo valores Alfa-Númericos" required="" value="<?php echo $taller['nom_tal'] ?>">
 		</div>
 	  </div>
 
@@ -64,8 +64,8 @@ if($acceso["est_per"]=="A")
 		<div class="col-md-3 col-12 align-self-center">
 		     <label for="">Ubicación/Dirección:</label>
 		</div>
-		<div class="col-md-7 col-12">
-		    <input type="text" name="ubi_tal" id="ubi_tal" required="required" maxlength="120" class="form-control" placeholder="Ubicación del Taller" onkeyup="return solo_letras();" value="<?php echo $taller['ubi_tal'] ?>">
+		<div class="col-md-9 col-12">
+		    <input type="text" name="ubi_tal" id="ubi_tal" required="required" maxlength="50" class="form-control" placeholder="Ubicación del Taller" pattern="[a-zA-Z0-9#.,-/ ]+" title="Solo valores Alfa-Númericos incluyendo los caracteres especiales ( # ) ( . ) ( , ) ( - ) ( / )" required="" value="<?php echo $taller['ubi_tal'] ?>">
 		</div>
 	  </div>
 
@@ -73,8 +73,8 @@ if($acceso["est_per"]=="A")
 		<div class="col-md-3 col-12 align-self-center">
 		     <label for="">Responsable:</label>
 		</div>
-		<div class="col-md-7 col-12">
-		    <input type="text" name="res_tal" id="res_tal" required="required" maxlength="50" class="form-control" placeholder="Persona Responsable del Taller" onkeyup="return solo_letras();" value="<?php echo $taller['res_tal'] ?>">
+		<div class="col-md-9 col-12">
+		    <input type="text" name="res_tal" id="res_tal" required="required" maxlength="50" class="form-control" placeholder="Persona Responsable del Taller" pattern="[a-zA-Z ]+" title="Solo Letras" required="" value="<?php echo $taller['res_tal'] ?>">
 		</div>
 	  </div>
 
@@ -82,8 +82,8 @@ if($acceso["est_per"]=="A")
 		<div class="col-md-3 col-12 align-self-center">
 		     <label for="">Teléfono Principal:</label>
 		</div>
-		<div class="col-md-4 col-12">
-		    <input type="text" name="te1_tal" id="te1_tal" required="required" maxlength="15" class="form-control" placeholder="Teléfono Principal" onkeyup="return solo_letras();"  value="<?php echo $taller['te1_tal'] ?>">
+		<div class="col-md-9 col-12">
+		    <input type="text" name="te1_tal" id="te1_tal" required="required" maxlength="15" class="form-control" placeholder="Teléfono Principal" pattern="[a-zA-Z0-9#.,-/ ]+" title="Solo valores Alfa-Númericos incluyendo los caracteres especiales ( # ) ( . ) ( , ) ( - ) ( / )" required=""  value="<?php echo $taller['te1_tal'] ?>">
 		</div>
 	  </div>
 
@@ -91,8 +91,8 @@ if($acceso["est_per"]=="A")
 		<div class="col-md-3 col-12 align-self-center">
 		     <label for="">Teléfono Secundario:</label>
 		</div>
-		<div class="col-md-4 col-12">
-		    <input type="text" name="te2_tal" id="te2_tal" required="required" maxlength="15" class="form-control" placeholder="Teléfono Secundario" onkeyup="return solo_letras();" value="<?php echo $taller['te2_tal'] ?>">
+		<div class="col-md-9 col-12">
+		    <input type="text" name="te2_tal" id="te2_tal" required="required" maxlength="15" class="form-control" placeholder="Teléfono Secundario" pattern="[a-zA-Z0-9#.,-/ ]+" title="Solo valores Alfa-Númericos incluyendo los caracteres especiales ( # ) ( . ) ( , ) ( - ) ( / )" required="" value="<?php echo $taller['te2_tal'] ?>">
 		</div>
 	  </div>
 
@@ -101,8 +101,8 @@ if($acceso["est_per"]=="A")
 		<div class="col-md-3 col-12 align-self-center">
 		     <label for="">Email del Taller:</label>
 		</div>
-		<div class="col-md-6 col-12">
-		    <input type="text" name="ema_tal" id="ema_tal" required="required" maxlength="80" class="form-control" placeholder="Email" onkeyup="return solo_letras();" value="<?php echo $taller['ema_tal'] ?>">
+		<div class="col-md-9 col-12">
+		    <input type="email" name="ema_tal" id="ema_tal" required="required" maxlength="80" class="form-control" placeholder="Email" value="<?php echo $taller['ema_tal'] ?>">
 		</div>
 	  </div>
 
@@ -111,9 +111,9 @@ if($acceso["est_per"]=="A")
 		<div class="col-md-3 col-12 align-self-center text-left">
 		     <label for="">Banco:</label>
 		</div>
-		<div class="col-md-4 col-12">
-		    <select name="fky_banco" id="fky_banco" class="form-control">
-		    <option value="X">Seleccione...</option>
+		<div class="col-md-9 col-12">
+		    <select name="fky_banco" id="fky_banco" class="form-control" required="">
+		    <option value="">Seleccione...</option>
 		    <?php
 		    $objBanco->asignar_valor("est_ban","A");
 		    $pun_ban=$objBanco->listar();
@@ -136,8 +136,8 @@ if($acceso["est_per"]=="A")
 		<div class="col-md-3 col-12 align-self-center">
 		     <label for="">Clabe Interbancaria:</label>
 		</div>
-		<div class="col-md-6 col-12">
-		    <input type="text" name="cue_tal" id="cue_tal" required="required" maxlength="20" class="form-control" placeholder="Clave Interbancaria" onkeyup="return solo_letras();" value="<?php echo $taller['cue_tal'] ?>">
+		<div class="col-md-9 col-12">
+		    <input type="text" name="cue_tal" id="cue_tal" required="required" maxlength="20" class="form-control" placeholder="Clave Interbancaria" pattern="[0-9]+" value="<?php echo $taller['cue_tal'] ?>" title="Solo Números">
 		</div>
 	  </div>
 
@@ -147,10 +147,10 @@ if($acceso["est_per"]=="A")
 	     <div class="col-md-3 col-12 align-self-center text-left">
 		     <label for="">Franquicia:</label>
 		</div>
-	    <div class="col-md-8 col-12">
+	    <div class="col-md-9 col-12">
 		<select name="fky_franquicia" id="fky_franquicia" class="form-control">
 
-		    <option value="">El taller no pertenece a ninguna franquicia.</option>
+		    <option value="1">El taller no pertenece a ninguna franquicia.</option>
 		    <?php
 		    $objFranquicia->asignar_valor("est_fra","A");
 		    $pun_fra=$objFranquicia->listar();
@@ -169,9 +169,9 @@ if($acceso["est_per"]=="A")
 	     <div class="col-md-3 col-12 align-self-center text-left">
 		     <label for="">Especialidad de Taller:</label>
 		</div>
-	    <div class="col-md-6 col-12">
-		<select name="fky_tipo_taller" id="fky_tipo_taller" class="form-control">
-		    <option value="X">Seleccione...</option>
+	    <div class="col-md-9 col-12">
+		<select name="fky_tipo_taller" id="fky_tipo_taller" class="form-control" required="">
+		    <option value="">Seleccione...</option>
 		    <?php
 		    $objTipoTaller->asignar_valor("est_tip_tal","A");
 		    $pun_tip=$objTipoTaller->listar();
@@ -189,9 +189,9 @@ if($acceso["est_per"]=="A")
 	  <div class="col-md-3 col-12 align-self-center text-left">
 		     <label for="">Estado:</label>
 	  </div>
-	  <div class="col-md-4 col-12">
-		    <select name="fky_estado" id="fky_estado" class="form-control" onchange="seleccionar_ciudad()">
-		    <option value="X">Seleccione...</option>
+	  <div class="col-md-9 col-12">
+		    <select name="fky_estado" id="fky_estado" class="form-control" onchange="seleccionar_ciudad()" required="">
+		    <option value="">Seleccione...</option>
 		    <?php
 		    $objEstado->asignar_valor("est_est","A");
 		    $pun_est=$objEstado->listar();
@@ -214,9 +214,9 @@ if($acceso["est_per"]=="A")
 	        <div class="col-md-3 col-12 align-self-center text-left">
 			     <label for="">Ciudad:</label>
 			</div>
-			<div class="col-md-4 col-12 text-muted" id="zona_ciudad">
-			 <select name="fky_ciudad" id="fky_ciudad" class="form-control">
-		    <option value="X">Seleccione...</option>
+			<div class="col-md-9 col-12 text-muted" id="zona_ciudad">
+			 <select name="fky_ciudad" id="fky_ciudad" class="form-control" required="">
+		    <option value="">Seleccione...</option>
 		    <?php
 		    $objCiudad->asignar_valor("est_ciu","A");
 		    $pun_est=$objCiudad->listar();
@@ -239,9 +239,9 @@ if($acceso["est_per"]=="A")
 	      <div class="col-md-3 col-12 align-self-center text-left">
 		     <label for="">Estatus:</label>
 		  </div>
-	      <div class="col-md-4 col-12">
+	      <div class="col-md-9 col-12">
 		     <select name="est_tal" id="est_tal" class="form-control">
-				<option value="A" selected="">Activo</option>
+				<option value="A">Activo</option>
 				<option value="I">Inactivo</option>	
 			</select>
 		  </div>
