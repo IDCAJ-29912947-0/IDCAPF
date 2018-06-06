@@ -41,7 +41,7 @@ if($acceso["est_per"]=="A")
 		     <label for="">Nombre:</label>
 		</div>
 		<div class="col-md-8 col-12">
-		    <input type="text" name="nom_ciu" id="nom_ciu" maxlength="50" class="form-control" placeholder="Nombre de la Ciudad" onkeyup="return solo_letras();">
+		    <input type="text" name="nom_ciu" id="nom_ciu" maxlength="35" class="form-control" placeholder="Nombre de la Ciudad" pattern="[a-zA-Z0-9 ]+" title="Solo valores Alfa-Númericos">
 		</div>
 
 	  </div>

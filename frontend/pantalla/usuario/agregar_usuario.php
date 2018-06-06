@@ -24,33 +24,33 @@ $obj_rol=new rol;
 				<div class="row mt-2">
 					<div class="col-4">Email:</div>
 					<div class="col-8">
-						<input type="text" name="ema_usu" id="ema_usu" placeholder="email@email.com" class="form-control">
+						<input type="email" name="ema_usu" id="ema_usu" placeholder="email@email.com" class="form-control" required="">
 					</div>
 				</div>
 				<div class="row mt-2">
 					<div class="col-4">Clave:</div>
 					<div class="col-8">
-						<input type="password" name="cla_usu" id="cla_usu" placeholder="Clave" class="form-control">
+						<input type="password" name="cla_usu" id="cla_usu" placeholder="Clave" class="form-control" required="">
 					</div>
 				</div>
 
 				<div class="row mt-2">
 					<div class="col-4">Nombre:</div>
 					<div class="col-8">
-						<input type="text" name="nom_usu" id="nom_usu" placeholder="Nombre" class="form-control">
+						<input type="text" name="nom_usu" id="nom_usu" placeholder="Nombre" class="form-control" pattern="[a-zA-Z ]+" title="Solo Letras" required="">
 					</div>
 				</div>
 				<div class="row mt-2">
 					<div class="col-4">Apellido:</div>
 					<div class="col-8">
-						<input type="text" name="ape_usu" id="ape_usu" placeholder="Apellido" class="form-control">
+						<input type="text" name="ape_usu" id="ape_usu" placeholder="Apellido" class="form-control" pattern="[a-zA-Z ]+" title="Solo Letras" required="">
 					</div>
 				</div>
 				<div class="row mt-2">
 					<div class="col-4">Rol:</div>
 					<div class="col-8">
-						<select name="fky_rol" id="fky_rol" class="form-control">
-							<option value="X">Seleccione...</option>
+						<select name="fky_rol" id="fky_rol" class="form-control" required="">
+							<option value="">Seleccione...</option>
 							<?php
 							$ret=$obj_rol->listar();
 							while (($rol=$obj_rol->extraer_dato($ret))>0)
@@ -64,8 +64,8 @@ $obj_rol=new rol;
 				<div class="row mt-2">
 					<div class="col-4">Estatus:</div>
 					<div class="col-8">
-						<select name="est_usu" id="est_usu" class="form-control">
-							<option value="X">Seleccione...</option>
+						<select name="est_usu" id="est_usu" class="form-control" required="">
+							<option value="">Seleccione...</option>
 							<option value="A">Activo</option>
 							<option value="I">Inactivo</option>
 						</select>

@@ -19,7 +19,7 @@ switch ($_REQUEST["accion"])
 		$res=$obj_mod->agregar();
 		if ($res==true) 
 		{
-			$obj_mod->mensaje("success","modulo","agregar");
+			$obj_mod->mensaje("success","Módulo agregado correctamente.","agregar");
 			$id=$obj_mod->ultimo_id();
 			if ($id>0) //Guardamos en Auditoria
 			{
@@ -31,7 +31,7 @@ switch ($_REQUEST["accion"])
 		}
 		else
 			{
-				$obj_mod->mensaje("danger","modulo","agregar");
+				$obj_mod->mensaje("danger","Error al agregar Módulo.","agregar");
 			}
 		break;
 

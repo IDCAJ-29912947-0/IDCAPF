@@ -37,7 +37,7 @@ if($acceso["est_per"]=="A")
 		     <label for="">RFC:</label>
 		</div>
 		<div class="col-md-4 col-12">
-		    <input type="text" name="rfc_cli" id="rfc_cli"  maxlength="15" class="form-control" placeholder="RFC" onkeyup="return solo_numeros();">
+		    <input type="text" name="rfc_cli" id="rfc_cli"  maxlength="15" class="form-control" placeholder="RFC" pattern="[a-zA-Z0-9.,- ]+" title="Solo valores Alfa-Númericos">
 		</div>
 	  </div>
 
@@ -47,7 +47,7 @@ if($acceso["est_per"]=="A")
 		     <label for="">Nombre Comercial:</label>
 		</div>
 		<div class="col-md-4 col-12">
-		    <input type="text" name="com_cli" id="com_cli"  maxlength="25" class="form-control" placeholder="Nombre Comercial" onkeyup="return solo_letras();">
+		    <input type="text" name="com_cli" id="com_cli"  maxlength="80" class="form-control" placeholder="Nombre Comercial" pattern="[a-zA-Z0-9.,- ]+" title="Solo valores Alfa-Númericos">
 		</div>
 
 	  </div>	   

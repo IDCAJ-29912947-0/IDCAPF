@@ -47,7 +47,6 @@ class taller extends utilidad
         $this->fky_franquicia,
         $this->fky_tipo_taller,        
        '$this->est_tal');";
-
        
     	return $this->ejecutar($sql);
    }//Fin Agregar

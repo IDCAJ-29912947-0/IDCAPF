@@ -20,7 +20,7 @@
 		<div class="row mt-2">
 			<div class="col-3 text-right">Email:</div>
 			<div class="col-9">
-				<input type="text" name="ema_usu" id="ema_usu" class="form-control" placeholder="Correo del Usuario">
+				<input type="email" name="ema_usu" id="ema_usu" class="form-control" placeholder="Correo del Usuario" required="">
 			</div>
 		</div>
 		<div class="row mt-2">

@@ -45,22 +45,21 @@ $datos=$obj->extraer_dato($resultado);
 
 	  <div class="row mt-2 bg-light">
 
-		<div class="col-md-2 col-12 align-self-center">
+		<div class="col-md-3 col-12 align-self-center">
 		     <label for="">Nombre:</label>
 		</div>
-		<div class="col-md-6 col-12">
-		    <input type="text" name="nom_ban" id="nom_ban" required="required" maxlength="50" class="form-control text-capitalize" placeholder="Nombre del Banco" onkeyup="return solo_numeros();" 
-		    value="<?php echo $datos['nom_ban']; ?>">
+		<div class="col-md-9 col-12">
+		    <input type="text" name="nom_ban" id="nom_ban" required="required" maxlength="50" class="form-control text-capitalize" placeholder="Nombre del Banco" value="<?php echo $datos['nom_ban']; ?>" pattern="[a-zA-Z0-9 ]+" title="Solo valores Alfa-Númericos" required="">
 		</div>
 
 	  </div> 
 
 
 	  <div class="row mt-2 bg-light">
-	     <div class="col-md-2 col-12 align-self-center">
+	     <div class="col-md-3 col-12 align-self-center">
 		     <label for="">Estatus:</label>
 		</div>
-	  <div class="col-md-4 col-12">
+	  <div class="col-md-9 col-12">
 	     <select name='est_ban' id='est_ban' class='form-control'>
 		 <?php
 		 $selected = ($datos['est_ban']=='A') ? "selected":"";
@@ -83,7 +82,7 @@ $datos=$obj->extraer_dato($resultado);
 	 </div>  	  
 	</div> <!-- Fin Container -->
 	<input type="hidden" name="accion" id="accion" value="modificar">
-	<input type="hidden" name="cod_ban" id="cod_ban" value="<?php echo $datos['cod_ban']; ?>">			
+	<input type="hidden" name="cod_ban" id="cod_ban" value="<?php echo $datos['cod_ban']; ?>" >			
 </form>	
 </body>
 </html>
