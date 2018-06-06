@@ -11,6 +11,8 @@ class empleado extends utilidad
 	public $te1_emp; 
 	public $te2_emp;
 	public $est_emp; 
+  public $nac_emp;
+  public $sal_emp;
 
 //==============================================================================
    public function agregar(){
@@ -23,6 +25,9 @@ class empleado extends utilidad
             ema_emp, 
             te1_emp, 
             te2_emp,
+            nac_emp,
+            ing_emp,
+            sal_emp,
             est_emp)
     	   values
     	     ('$this->ide_emp', 
@@ -32,6 +37,9 @@ class empleado extends utilidad
             '$this->ema_emp', 
             '$this->te1_emp', 
             '$this->te2_emp',
+            '$this->nac_emp', 
+            '$this->ing_emp', 
+            '$this->sal_emp',                       
             '$this->est_emp');";
 
            
@@ -49,7 +57,11 @@ class empleado extends utilidad
       ema_emp='$this->ema_emp', 
       te1_emp='$this->te1_emp', 
       te2_emp='$this->te2_emp', 
-      est_emp='$this->est_emp' 
+      est_emp='$this->est_emp',
+      nac_emp='$this->nac_emp',
+      ing_emp='$this->ing_emp',
+      sal_emp='$this->sal_emp',
+      est_emp='$this->est_emp'      
       where 
       cod_emp=$this->cod_emp;";
    		return $this->ejecutar($sql);

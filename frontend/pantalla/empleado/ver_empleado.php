@@ -43,7 +43,7 @@ $datos=$obj->extraer_dato($resultado);
 
 	  <div class="row mt-2 bg-light">
 
-		<div class="col-md-2 col-12 align-self-center">
+		<div class="col-md-3 col-12 align-self-center">
 		     <label for="">Identificación:</label>
 		</div>
 		<div class="col-md-4 col-12">
@@ -54,7 +54,7 @@ $datos=$obj->extraer_dato($resultado);
 
 	  <div class="row mt-2 bg-light">
 
-		<div class="col-md-2 col-12 align-self-center ">
+		<div class="col-md-3 col-12 align-self-center ">
 		     <label for="">Nombres:</label>
 		</div>
 		<div class="col-md-4 col-12">
@@ -65,7 +65,7 @@ $datos=$obj->extraer_dato($resultado);
 
 	   <div class="row mt-2 bg-light">
 
-		<div class="col-md-2 col-12 align-self-center">
+		<div class="col-md-3 col-12 align-self-center">
 		     <label for="">Apellidos:</label>
 		</div>
 		<div class="col-md-4 col-12">
@@ -76,7 +76,7 @@ $datos=$obj->extraer_dato($resultado);
 
 	   <div class="row mt-2 bg-light">
 
-		<div class="col-md-2 col-12 align-self-center">
+		<div class="col-md-3 col-12 align-self-center">
 		     <label for="">Sexo:</label>
 		</div>
 		<div class="col-md-4 col-12">
@@ -101,7 +101,7 @@ $datos=$obj->extraer_dato($resultado);
 
 	   <div class="row mt-2 bg-light"">
 
-		<div class="col-md-2 col-12 align-self-center">
+		<div class="col-md-3 col-12 align-self-center">
 		     <label for="">Email:</label>
 		</div>
 		<div class="col-md-6 col-12">
@@ -112,7 +112,7 @@ $datos=$obj->extraer_dato($resultado);
 
 	  <div class="row mt-2 bg-light">
 
-	  <div class="col-md-2 col-12 align-self-center">
+	  <div class="col-md-3 col-12 align-self-center">
 		     <label for="">Número de Celular:</label>
 		</div>
 		<div class="col-md-6 col-12">
@@ -123,7 +123,7 @@ $datos=$obj->extraer_dato($resultado);
 
 
 	  <div class="row mt-2 bg-light"">
-	  <div class="col-md-2 col-12 align-self-center">
+	  <div class="col-md-3 col-12 align-self-center">
 		     <label for="">Teléfono Secundario:</label>
 		</div>
 		<div class="col-md-6 col-12">
@@ -133,7 +133,39 @@ $datos=$obj->extraer_dato($resultado);
 	  </div> 
 
 	  <div class="row mt-2 bg-light">
-	     <div class="col-md-2 col-12 align-self-center">
+	  <div class="col-md-3 col-12 align-self-center">
+		     <label for="">Fecha Nacimiento:</label>
+		</div>
+		<div class="col-md-4 col-12">
+		    <input type="date" name="nac_emp" id="nac_emp"  class="form-control" value="<?php echo $datos['nac_emp']; ?>" readonly>
+		</div>
+		<div class="col-md-2 col-12 align-self-center">
+		    <?php echo "(".$obj->calcular_edad($datos['nac_emp'])." Años)"?>
+		</div>
+	  </div> 
+
+	  <div class="row mt-2 bg-light">
+	  <div class="col-md-3 col-12 align-self-center">
+		     <label for="">Ingreso a la Empresa:</label>
+		</div>
+		<div class="col-md-4 col-12">
+		    <input type="date" name="ing_emp" id="ing_emp"  class="form-control" value="<?php echo $datos['ing_emp']; ?>" required readonly>
+		</div>
+
+	  </div> 
+
+	  <div class="row mt-2 bg-light">
+	  <div class="col-md-3 col-12 align-self-center">
+		     <label for="">Salario Actual:</label>
+		</div>
+		<div class="col-md-3 col-12">
+		    <input type="text" name="sal_emp" id="sal_emp"  class="form-control" value="<?php echo $datos['sal_emp']; ?>" placeholder="Salario Actual" readonly>
+		</div>
+
+	  </div> 		  	  	  
+
+	  <div class="row mt-2 bg-light">
+	     <div class="col-md-3 col-12 align-self-center">
 		     <label for="">Estatus:</label>
 		</div>
 	  <div class="col-md-4 col-12">

@@ -117,6 +117,35 @@ if($acceso["est_per"]=="A")
 
 	  </div> 
 
+	  <div class="row mt-2 bg-light">
+	  <div class="col-md-3 col-12 align-self-center">
+		     <label for="">Fecha Nacimiento:</label>
+		</div>
+		<div class="col-md-6 col-12">
+		    <input type="date" name="nac_emp" id="nac_emp"  class="form-control">
+		</div>
+
+	  </div> 
+
+	  <div class="row mt-2 bg-light">
+	  <div class="col-md-3 col-12 align-self-center">
+		     <label for="">Ingreso a la Empresa:</label>
+		</div>
+		<div class="col-md-4 col-12">
+		    <input type="date" name="ing_emp" id="ing_emp"  class="form-control">
+		</div>
+
+	  </div> 
+
+	  <div class="row mt-2 bg-light">
+	  <div class="col-md-3 col-12 align-self-center">
+		     <label for="">Salario Actual:</label>
+		</div>
+		<div class="col-md-3 col-12">
+		    <input type="text" name="sal_emp" id="sal_emp"  class="form-control" placeholder="Salario Actual">
+		</div>
+
+	  </div> 	  
 
 	  <div class="row mt-2 bg-light">
 	     <div class="col-md-3 col-12 align-self-center">
