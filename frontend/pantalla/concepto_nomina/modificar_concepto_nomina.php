@@ -20,7 +20,7 @@ if($acceso["est_per"]=="A")
   	$obj->asignar_valor($nombre_campo,$valor);
 	} 
 
-$resultado=$obj->filtrar($obj->cod_con_nom,$nom_con_nom="",$est_con_nom="");
+$resultado=$obj->filtrar($obj->cod_con_nom,$nom_con_nom="",$est_con_nom="",$opc_con_nom="");
 $concepto_nomina=$obj->extraer_dato($resultado);
 ?>
 <!DOCTYPE html>
@@ -36,7 +36,7 @@ $concepto_nomina=$obj->extraer_dato($resultado);
 <body>
 
 <form action="../../../backend/controlador/concepto_nomina.php" method="POST">
-
+<input type="hidden" name="accion" id="accion" value="procesar">
 <div class="container">
 	<div class="row justify-content-center">
 	<div class="col-11  ">

@@ -109,5 +109,7 @@ class cliente extends utilidad
    }// Fin Filtrar
 //==============================================================================
 
+   
+
 }//Fin de la Clase
 ?>

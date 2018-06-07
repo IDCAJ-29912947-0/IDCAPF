@@ -81,8 +81,16 @@ if($acceso["est_per"]=="A")
 		?>
 
 		<div class="col-md-2 col-12 border border-white text-center">
+		 <?php
+		 	if($datos["nom_var_nom"]!="SALME")
+		 	{
+		 ?>
 		  <a href="<?php echo "ver_variable_nomina.php?cod_var_nom=$datos[cod_var_nom]"?>">Ver</a> 
 		  <a href="<?php echo "modificar_variable_nomina.php?cod_var_nom=$datos[cod_var_nom]"?>">Editar</a>  
+		  <?php
+		    }else
+		     echo "No Editable";
+		  ?>
 		</div>
 
 		<div class="col-md-2 col-12 border border-white text-left text-capitalize">
