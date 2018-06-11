@@ -26,10 +26,10 @@ if($acceso["est_per"]=="A")
 			$prk_aud=$obj->ultimo_id_insertado();
 			if($prk_aud>0){
 				$obj->auditoria($prk_aud);
-				$obj->mensaje("success","Variable de nómina agregada correctamente");
+				$obj->mensaje("success","Variable de N&oacute;mina agregada correctamente.");
 			}else
 			{
-				$obj->mensaje("danger","Error al agregar la variable de nómina");
+				$obj->mensaje("danger","Error al agregar la variable de N&oacute;mina.");
 			}
 			
 		break;
@@ -39,9 +39,9 @@ if($acceso["est_per"]=="A")
 			$num_aff=$obj->filas_afectadas();
 			if($num_aff>0){
 				$obj->auditoria($obj->cod_var_nom);
-				$obj->mensaje("success","Variable de nómina modificada correctamente");
+				$obj->mensaje("success","Variable de N&oacute;mina modificada correctamente.");
 			}else{
-				$obj->mensaje("danger","No se modific&oacute; ning&uacute; registro");
+				$obj->mensaje("danger","No se modific&oacute; ning&uacute;n registro.");
 			}
 			
 		break;
@@ -51,9 +51,9 @@ if($acceso["est_per"]=="A")
 			  $num_aff=$obj->filas_afectadas();
 			  if($num_aff>0){
 			  	$obj->auditoria($obj->cod_var_nom);
-			  	$obj->mensaje("success","Variable de nómina eliminada correctamente");
+			  	$obj->mensaje("success","Variable de N&oacute;mina eliminada correctamente.");
 			  }else{
-			  	$obj->mensaje("danger","Error al borrar las variables de nómina.");
+			  	$obj->mensaje("danger","Error al borrar las variables de N&oacute;mina.");
 			  }
 		break;
 
@@ -62,7 +62,7 @@ if($acceso["est_per"]=="A")
 			  $num_aff=$obj->filas_afectadas();
 			  if($num_aff>0){
 			  	$obj->auditoria($obj->cod_var_nom);
-			  	$obj->mensaje("success","Cambio de estatus realizado correctamente");
+			  	$obj->mensaje("success","Cambio de estatus realizado correctamente.");
 			  }else{
 			  	$obj->mensaje("danger","Error al cambiar el estatus.");
 			  }
@@ -72,7 +72,7 @@ if($acceso["est_per"]=="A")
 	}
 
 }else{
-	$obj->mensaje("danger","No tienes permiso de accesar a esta p&aacute;gina");
+	$obj->mensaje("danger","No tienes permiso de accesar a esta p&aacute;gina.");
 }
 
 

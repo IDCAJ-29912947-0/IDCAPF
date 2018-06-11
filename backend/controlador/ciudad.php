@@ -41,10 +41,10 @@ if($acceso["est_per"]=="A")
 			$prk_aud=$obj->ultimo_id_insertado();
 			if($prk_aud>0){
 				$obj->auditoria($prk_aud);
-				$obj->mensaje("success","Ciudad agregada correctamente");
+				$obj->mensaje("success","Ciudad agregada correctamente.");
 			}else
 			{
-				$obj->mensaje("danger","Error al agregar la Ciudad");
+				$obj->mensaje("danger","Error al agregar Ciudad.");
 			}
 			
 		break;
@@ -54,9 +54,9 @@ if($acceso["est_per"]=="A")
 			$num_aff=$obj->filas_afectadas();
 			if($num_aff>0){
 				$obj->auditoria($obj->cod_ciu);
-				$obj->mensaje("success","Ciudad modificada correctamente");
+				$obj->mensaje("success","Ciudad modificada correctamente.");
 			}else{
-				$obj->mensaje("danger","No se modific&oacute; ning&uacute; registro");
+				$obj->mensaje("danger","No se modific&oacute; ning&uacute;n registro.");
 			}
 			
 		break;
@@ -66,7 +66,7 @@ if($acceso["est_per"]=="A")
 			  $num_aff=$obj->filas_afectadas();
 			  if($num_aff>0){
 			  	$obj->auditoria($obj->cod_ciu);
-			  	$obj->mensaje("success","Ciudad eliminada correctamente");
+			  	$obj->mensaje("success","Ciudad eliminada correctamente.");
 			  }else{
 			  	$obj->mensaje("danger","Error al borrar la Ciudad.");
 			  }
@@ -77,9 +77,9 @@ if($acceso["est_per"]=="A")
 			  $num_aff=$obj->filas_afectadas();
 			  if($num_aff>0){
 			  	$obj->auditoria($obj->cod_ciu);
-			  	$obj->mensaje("success","Cambio de estatus realizado correctamente");
+			  	$obj->mensaje("success","Cambio de estatus realizado correctamente.");
 			  }else{
-			  	$obj->mensaje("danger","Error al cambiar el estatus del Ciudad.");
+			  	$obj->mensaje("danger","Error al cambiar el estatus de la Ciudad.");
 			  }
 			 
 		break;

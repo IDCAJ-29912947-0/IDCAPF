@@ -1,43 +1,80 @@
-<?php 
-require ("../clase/opcion.class.php");
-require ("../clase/auditoria.class.php");
+<?php
 
-$obj_opc=new opcion;
-$obj_aud=new auditoria;
+require("../clase/permiso.class.php");
+require("../clase/opcion.class.php");
 
-foreach ($_REQUEST as $campo => $valor) {
-	$obj_opc->asignar_valor($campo,$valor);
-}
+$obj=new opcion;
+$objPermiso=new permiso;
 
-$obj_aud->asignar_valor("fec_aud",date("Y-m-d H:i:s"));
-$obj_aud->asignar_valor("ip_aud","127.0.0.1");
-$obj_aud->asignar_valor("fky_usuario",1);
+$permiso=$objPermiso->validar_acceso($opcion=1,$fky_usuario=1,$token=md5("12345"));
+$acceso=$objPermiso->extraer_dato($permiso);
+
+if($acceso["est_per"]=="A")
+{
+	$obj->asignar_valor("tab_aud","opcion"); //Para Auditoria
+	$obj->asignar_valor("fky_usuario","1"); //Para Auditoria
+	$obj->asignar_valor("acc_aud",$_REQUEST["accion"]); //Para Auditoria
+
+//Recibimos todas las variables enviadas por el método POST o GET
+	foreach($_REQUEST as $nombre_campo => $valor){
+  		 $obj->asignar_valor($nombre_campo,$valor);
+	} 
 
 	switch ($_REQUEST["accion"]) {
 
-		case 'agregar':
-		$res=$obj_opc->agregar();
-		if ($res==true) {
-			$obj_opc->mensaje("success","Opcion","agregado");
-			$id=$obj_opc->ultimo_id_insertado();
-			if ($id>0) {
-			$obj_aud->asignar_valor("fky_opcion",1);
-			$obj_aud->asignar_valor("sql_aud","insert");
-			$obj_aud->asignar_valor("id_aud",$id);
-			$obj_aud->agregar();
+		case 'agregar':    
+			$res=$obj->agregar();
+			$prk_aud=$obj->ultimo_id_insertado();
+			if($prk_aud>0){
+				$obj->auditoria($prk_aud);
+				$obj->mensaje("success","Opci&oacute;n agregada correctamente.");
+			}else
+			{
+				$obj->mensaje("danger","Error al agregar Opci&oacute;n.");
 			}
-		}else{
-			$obj_opc->mensaje("danger","Opcion","agregado");
-		}
+			
 		break;
 
-		case 'modificar':
-			break;
+		case 'modificar':    
+			$res=$obj->modificar();
+			$num_aff=$obj->filas_afectadas();
+			if($num_aff>0){
+				$obj->auditoria($obj->cod_opc);
+				$obj->mensaje("success","Opci&oacute;n modificada correctamente.");
+			}else{
+				$obj->mensaje("danger","No se modific&oacute; ning&uacute;n registro.");
+			}
+			
+		break;
 
-		case 'eliminar':
-			break;
+		case 'eliminar':    
+			  $res=$obj->eliminar();
+			  $num_aff=$obj->filas_afectadas();
+			  if($num_aff>0){
+			  	$obj->auditoria($obj->cod_opc);
+			  	$obj->mensaje("success","Opci&oacute;n eliminada correctamente.");
+			  }else{
+			  	$obj->mensaje("danger","Error al borrar Opci&oacute;n.");
+			  }
+		break;
 
-		case 'listar':
-			break;
+		case 'cambio_estatus': 
+			  $res=$obj->cambio_estatus();
+			  $num_aff=$obj->filas_afectadas();
+			  if($num_aff>0){
+			  	$obj->auditoria($obj->cod_opc);
+			  	$obj->mensaje("success","Cambio de estatus realizado correctamente.");
+			  }else{
+			  	$obj->mensaje("danger","Error al cambiar el estatus de la Opci&oacute;n.");
+			  }
+			 
+		break;
+	
 	}
- ?>
+
+}else{
+	$obj->mensaje("danger","No tienes permiso de accesar a esta p&aacute;gina.");
+}
+
+
+?>

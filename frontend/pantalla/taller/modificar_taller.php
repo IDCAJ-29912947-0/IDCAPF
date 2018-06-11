@@ -92,7 +92,7 @@ if($acceso["est_per"]=="A")
 		     <label for="">Teléfono Secundario:</label>
 		</div>
 		<div class="col-md-9 col-12">
-		    <input type="text" name="te2_tal" id="te2_tal" required="required" maxlength="15" class="form-control" placeholder="Teléfono Secundario" pattern="[a-zA-Z0-9#.,-/ ]+" title="Solo valores Alfa-Númericos incluyendo los caracteres especiales ( # ) ( . ) ( , ) ( - ) ( / )" required="" value="<?php echo $taller['te2_tal'] ?>">
+		    <input type="text" name="te2_tal" id="te2_tal" maxlength="15" class="form-control" placeholder="Teléfono Secundario" pattern="[a-zA-Z0-9#.,-/ ]+" title="Solo valores Alfa-Númericos incluyendo los caracteres especiales ( # ) ( . ) ( , ) ( - ) ( / )" value="<?php echo $taller['te2_tal'] ?>">
 		</div>
 	  </div>
 

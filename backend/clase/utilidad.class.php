@@ -6,13 +6,13 @@
 class utilidad
 {
     private $servidor="localhost";
-//    private $usuario="platinum_usuario";
-//    private $clave="5xn@@kJL-nEa";
-//    private $base_datos="platinum_bd";
+    //private $usuario="platinum_usuario";
+    //private $clave="5xn@@kJL-nEa";
+    //private $base_datos="platinum_bd";
 
     private $usuario="root";
     private $clave="";
-    private $base_datos="febrero";
+    private $base_datos="platinum_bd";
     public  $mysqli;
     public  $sql;
     private $tab_aud;

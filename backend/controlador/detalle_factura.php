@@ -17,9 +17,9 @@ switch($accion)
 	case 'agregar':
 		$res_que=$obj_det->agregar();
 		if($res_que==TRUE)
-			echo "Detalle_factura guardado correctamente.";
+			echo "Detalle de factura guardado correctamente.";
 		else
-			echo "Error al guardar detalle_factura.";
+			echo "Error al guardar detalle factura.";
 		
 	break;
 	/*

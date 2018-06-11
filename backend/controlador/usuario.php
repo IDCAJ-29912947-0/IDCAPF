@@ -18,7 +18,7 @@ switch ($accion) {
 		$res=$obj_usu->agregar();
 		if ($res==true) 
 		{
-			$obj_usu->mensaje("success","usuario","agregar");
+			$obj_usu->mensaje("success","Usuario agregado correctamente.","agregar");
 			$id=$obj_usu->ultimo_id();
 			if ($id>0) 
 			{
@@ -29,7 +29,7 @@ switch ($accion) {
 			}
 		} else 
 		{
-			$obj_usu->mensaje("danger","usuario","agregar");
+			$obj_usu->mensaje("danger","Error al agregar el Usuario.","agregar");
 		}
 		
 		break;
@@ -40,10 +40,10 @@ switch ($accion) {
 		$fil_afe=$obj_usu->filas_afectadas();
 		if ($fil_afe>0) 
 		{
-			$obj_usu->mensaje("success","usuario","modificar");
+			$obj_usu->mensaje("success","Usuario modificado correctamente.","modificar");
 			$id=$obj_usu->ultimo_id();
 		} else {
-			$obj_usu->mensaje("danger","usuario","modificar");
+			$obj_usu->mensaje("danger","No se modific&oacute; ning&uacute;n registro.","modificar");
 		}
 		
 		break;
@@ -53,15 +53,16 @@ switch ($accion) {
 		$fil_afe->$obj_usu->filas_afectadas();
 		if ($fil_afe>0) 
 		{
-			$obj_usu->mensaje("success","usuario","eliminar");
+			$obj_usu->mensaje("success","Usuario eliminado correctamente.","eliminar");
 			$id=$obj_usu->ultimo_id();
 		} else {
-			$obj_usu->mensaje("danger","usuario","eliminar");
+			$obj_usu->mensaje("danger","Error al borrar Usuario.","eliminar");
 		}
 		
 		break;
-	case 'listar':
-		# code...
-		break;
+}else{
+	$obj->mensaje("danger","No tienes permiso de accesar a esta p&aacute;gina.");
 }
+
+
 ?>
