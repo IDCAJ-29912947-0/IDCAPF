@@ -26,11 +26,19 @@ if($acceso["est_per"]=="A")
 			$prk_aud=$obj->ultimo_id_insertado();
 			if($prk_aud>0){
 				$obj->auditoria($prk_aud);
+<<<<<<< HEAD
 				$obj->mensaje("success","N&oacute;mina agregada correctamente.");
 
 			}else
 			{
 				$obj->mensaje("danger","Error al agregar N&oacute;mina.");
+=======
+				$obj->mensaje("success","Nómina agregada correctamente");
+
+			}else
+			{
+				$obj->mensaje("danger","Error al agregar la nómina");
+>>>>>>> f3531111006265007d84f306c5324b460601402d
 			}
 			
 		break;
@@ -40,9 +48,15 @@ if($acceso["est_per"]=="A")
 			$num_aff=$obj->filas_afectadas();
 			if($num_aff>0){
 				$obj->auditoria($obj->cod_nom);
+<<<<<<< HEAD
 				$obj->mensaje("success","N&oacute;mina modificada correctamente.");
 			}else{
 				$obj->mensaje("danger","No se modific&oacute; ning&uacute;n registro.");
+=======
+				$obj->mensaje("success","Nómina modificada correctamente");
+			}else{
+				$obj->mensaje("danger","No se modific&oacute; ning&uacute; registro");
+>>>>>>> f3531111006265007d84f306c5324b460601402d
 			}
 			
 		break;
@@ -52,9 +66,15 @@ if($acceso["est_per"]=="A")
 			  $num_aff=$obj->filas_afectadas();
 			  if($num_aff>0){
 			  	$obj->auditoria($obj->cod_nom);
+<<<<<<< HEAD
 			  	$obj->mensaje("success","N&oacute;mina eliminada correctamente.");
 			  }else{
 			  	$obj->mensaje("danger","Error al borrar N&oacute;mina.");
+=======
+			  	$obj->mensaje("success","Nómina eliminada correctamente");
+			  }else{
+			  	$obj->mensaje("danger","Error al borrar nómina.");
+>>>>>>> f3531111006265007d84f306c5324b460601402d
 			  }
 		break;
 
@@ -63,9 +83,15 @@ if($acceso["est_per"]=="A")
 			  $num_aff=$obj->filas_afectadas();
 			  if($num_aff>0){
 			  	$obj->auditoria($obj->cod_nom);
+<<<<<<< HEAD
 			  	$obj->mensaje("success","Cambio de estatus realizado correctamente.");
 			  }else{
 			  	$obj->mensaje("danger","Error al cambiar el estatus de la N&oacute;mina.");
+=======
+			  	$obj->mensaje("success","Cambio de estatus realizado correctamente");
+			  }else{
+			  	$obj->mensaje("danger","Error al cambiar el estatus del nomina.");
+>>>>>>> f3531111006265007d84f306c5324b460601402d
 			  }
 			 
 		break;
@@ -75,16 +101,26 @@ if($acceso["est_per"]=="A")
 			  if($num_aff>0){
 			  	$obj->asignar_valor("est_nom","F");
 			  	$res=$obj->cambio_estatus();
+<<<<<<< HEAD
 			  	$obj->mensaje("success","N&oacute;mina procesada correctamente.");
 			  }else{
 			  	$obj->mensaje("danger","Error al procesar N&oacute;mina.");
+=======
+			  	$obj->mensaje("success","Nómina procesada correctamente");
+			  }else{
+			  	$obj->mensaje("danger","Error al procesar nómina.");
+>>>>>>> f3531111006265007d84f306c5324b460601402d
 			  }
 		break;
 	
 	}
 
 }else{
+<<<<<<< HEAD
 	$obj->mensaje("danger","No tienes permiso de accesar a esta p&aacute;gina.");
+=======
+	$obj->mensaje("danger","No tienes permiso de accesar a esta p&aacute;gina");
+>>>>>>> f3531111006265007d84f306c5324b460601402d
 }
 
 
