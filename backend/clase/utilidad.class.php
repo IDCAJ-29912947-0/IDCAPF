@@ -6,13 +6,13 @@
 class utilidad
 {
     private $servidor="localhost";
-//    private $usuario="platinum_usuario";
-//    private $clave="5xn@@kJL-nEa";
-//    private $base_datos="platinum_bd";
+    //private $usuario="platinum_usuario";
+    //private $clave="5xn@@kJL-nEa";
+    //private $base_datos="platinum_bd";
 
     private $usuario="root";
     private $clave="";
-    private $base_datos="febrero";
+    private $base_datos="platinum_bd";
     public  $mysqli;
     public  $sql;
     private $tab_aud;
@@ -59,7 +59,7 @@ class utilidad
 
 //=== ejecutar: función para ejecutar una acción en la base de datos.
 	public function ejecutar($sql){
-    
+    //echo $sql;
 		$this->sql=$sql; 
 		return $this->mysqli->query($sql);
 	}// Fin de la función ejecutar()  
@@ -117,9 +117,9 @@ class utilidad
 
    }
 
-   public function formatear_numero($numero)
+   public function formatear_numero($numero,$decimales)
    {
-      return number_format($numero,0,",",".");
+      return number_format($numero,$decimales,",",".");
    }
 
    public function voltear_fecha($fecha)
@@ -182,6 +182,14 @@ class utilidad
   {
     list($Y,$m,$d) = explode("-",$fecha);
     return( date("md") < $m.$d ? date("Y")-$Y-1 : date("Y")-$Y );
+  }
+
+  public function contar_filas($tabla,$variable,$valor)
+  {
+      $sql="select count(*) as total from $tabla where $variable='$valor'";
+      return $this->ejecutar($sql);
+
+
   }
 
 

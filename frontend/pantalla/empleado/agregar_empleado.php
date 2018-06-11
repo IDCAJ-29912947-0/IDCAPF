@@ -112,7 +112,7 @@ if($acceso["est_per"]=="A")
 		     <label for="">Teléfono Secundario:</label>
 		</div>
 		<div class="col-md-9 col-12">
-		    <input type="text" name="te2_emp" id="te2_emp" maxlength="15" class="form-control" placeholder="Teléfono Secundario" pattern="[0-9]+" title="Solo valores Númericos" required="">
+		    <input type="text" name="te2_emp" id="te2_emp" maxlength="15" class="form-control" placeholder="Teléfono Secundario" pattern="[0-9]+" title="Solo valores Númericos">
 		</div>
 
 	  </div> 

@@ -27,10 +27,10 @@ if($acceso["est_per"]=="A")
 			$prk_aud=$obj->ultimo_id_insertado();
 			if($prk_aud>0){
 				$obj->auditoria($prk_aud);
-				$obj->mensaje("success","Concepto de Nómina agregado correctamente");
+				$obj->mensaje("success","Concepto de N&oacute;mina agregado correctamente.");
 			}else
 			{
-				$obj->mensaje("danger","Error al agregar el Concepto de Nómina");
+				$obj->mensaje("danger","Error al agregar el Concepto de N&oacute;mina.");
 			}
 			
 		break;
@@ -40,9 +40,9 @@ if($acceso["est_per"]=="A")
 			$num_aff=$obj->filas_afectadas();
 			if($num_aff>0){
 				$obj->auditoria($obj->cod_con_nom);
-				$obj->mensaje("success","Concepto de Nómina modificada correctamente");
+				$obj->mensaje("success","Concepto de N&oacute;mina modificada correctamente.");
 			}else{
-				$obj->mensaje("danger","No se modific&oacute; ning&uacute;n registro");
+				$obj->mensaje("danger","No se modific&oacute; ning&uacute;n registro.");
 			}
 			
 		break;
@@ -52,9 +52,9 @@ if($acceso["est_per"]=="A")
 			  $num_aff=$obj->filas_afectadas();
 			  if($num_aff>0){
 			  	$obj->auditoria($obj->cod_con_nom);
-			  	$obj->mensaje("success","Concepto de Nómina eliminado correctamente");
+			  	$obj->mensaje("success","Concepto de N&oacute;mina eliminado correctamente.");
 			  }else{
-			  	$obj->mensaje("danger","Error al borrar Concepto de Nómina.");
+			  	$obj->mensaje("danger","Error al borrar Concepto de N&oacute;mina.");
 			  }
 		break;
 
@@ -63,9 +63,9 @@ if($acceso["est_per"]=="A")
 			  $num_aff=$obj->filas_afectadas();
 			  if($num_aff>0){
 			  	$obj->auditoria($obj->cod_con_nom);
-			  	$obj->mensaje("success","Cambio de estatus realizado correctamente");
+			  	$obj->mensaje("success","Cambio de estatus realizado correctamente.");
 			  }else{
-			  	$obj->mensaje("danger","Error al cambiar el estatus del Concepto de Nómina.");
+			  	$obj->mensaje("danger","Error al cambiar el estatus del Concepto de N&oacute;mina.");
 			  }
 			 
 		break;

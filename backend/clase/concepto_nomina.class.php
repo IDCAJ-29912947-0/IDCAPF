@@ -69,22 +69,43 @@ class concepto_nomina extends utilidad
    }//Fin Cambio Estatus   
 //==============================================================================
 
-   public function filtrar($cod_con_nom,$des_con_nom,$est_con_nom){
+   public function filtrar($cod_con_nom,$des_con_nom,$est_con_nom,$opc_con_nom){
         
         $filtro1 = ($cod_con_nom!="") ? "and cod_con_nom=$cod_con_nom":"";
         $filtro2 = ($des_con_nom!="") ? "and des_con_nom like '%$des_con_nom%'":"";
         $filtro3 = ($est_con_nom!="") ? "and est_con_nom='$est_con_nom'":"";
+        $filtro4 = ($opc_con_nom!="") ? "and opc_con_nom='$opc_con_nom'":"";
 
         $sql="select cn.*,tc.nom_tip_con
               from concepto_nomina cn, tipo_concepto tc
               where 
               fky_tipo_concepto=cod_tip_con
-              $filtro1 $filtro2 $filtro3;"; 
+              $filtro1 $filtro2 $filtro3 $filtro4;"; 
 
         return $this->ejecutar($sql);  
 
    }// Fin Filtrar
 //==============================================================================
+
+    public function movimiento_nomina($signo,$nomina,$empleado){
+
+      $sql="select SUM(pn.mon_pag_nom) as total,pn.fky_empleado,tc.nom_tip_con
+            FROM pago_nomina pn, concepto_nomina cn, tipo_concepto tc
+            WHERE 
+                  pn.fky_nomina=$nomina and 
+                  pn.fky_empleado=$empleado and
+                  pn.fky_concepto_nomina = cn.cod_con_nom and 
+                  cn.fky_tipo_concepto = tc.cod_tip_con and 
+                  tc.sig_tip_con =  '$signo' 
+
+            GROUP BY (fky_empleado)";
+
+      
+      return $this->ejecutar($sql);  
+    }
+
+//==============================================================================
+
 
 }//Fin de la Clase
 ?>

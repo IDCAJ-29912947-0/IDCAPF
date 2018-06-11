@@ -79,7 +79,7 @@ if($acceso["est_per"]=="A")
 		
 		$num_fil=0;
 
-		$resultado=$obj->filtrar("",$obj->des_con_nom,"");
+		$resultado=$obj->filtrar("",$obj->des_con_nom,"","");
 		while(($datos=$obj->extraer_dato($resultado))>0){
 		$num_fil++;	
 		?>

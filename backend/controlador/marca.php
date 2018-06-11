@@ -39,10 +39,10 @@ if($acceso["est_per"]=="A")
 			$prk_aud=$obj->ultimo_id_insertado();
 			if($prk_aud>0){
 				$obj->auditoria($prk_aud);
-				$obj->mensaje("success","Marca agregada correctamente");
+				$obj->mensaje("success","Marca agregada correctamente.");
 			}else
 			{
-				$obj->mensaje("danger","Error al agregar la marca");
+				$obj->mensaje("danger","Error al agregar Marca.");
 			}
 			
 		break;
@@ -52,9 +52,9 @@ if($acceso["est_per"]=="A")
 			$num_aff=$obj->filas_afectadas();
 			if($num_aff>0){
 				$obj->auditoria($obj->cod_mar);
-				$obj->mensaje("success","Marca modificada correctamente");
+				$obj->mensaje("success","Marca modificada correctamente.");
 			}else{
-				$obj->mensaje("danger","No se modific&oacute; ning&uacute; registro");
+				$obj->mensaje("danger","No se modific&oacute; ning&uacute;n registro.");
 			}
 			
 		break;
@@ -64,9 +64,9 @@ if($acceso["est_per"]=="A")
 			  $num_aff=$obj->filas_afectadas();
 			  if($num_aff>0){
 			  	$obj->auditoria($obj->cod_mar);
-			  	$obj->mensaje("success","Marca eliminada correctamente");
+			  	$obj->mensaje("success","Marca eliminada correctamente.");
 			  }else{
-			  	$obj->mensaje("danger","Error al borrar marca.");
+			  	$obj->mensaje("danger","Error al borrar Marca.");
 			  }
 		break;
 
@@ -75,7 +75,7 @@ if($acceso["est_per"]=="A")
 			  $num_aff=$obj->filas_afectadas();
 			  if($num_aff>0){
 			  	$obj->auditoria($obj->cod_mar);
-			  	$obj->mensaje("success","Cambio de estatus realizado correctamente");
+			  	$obj->mensaje("success","Cambio de estatus realizado correctamente.");
 			  }else{
 			  	$obj->mensaje("danger","Error al cambiar el estatus de la Marca.");
 			  }
