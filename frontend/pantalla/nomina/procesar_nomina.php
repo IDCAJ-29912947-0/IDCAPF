@@ -31,7 +31,7 @@ if($acceso["est_per"]=="A")
   	$obj->asignar_valor($nombre_campo,$valor);
 	} 
 
-	$pun_nom=$obj->filtrar($cod_nom="",$des_nom="",$est_nom="G");
+	$pun_nom=$obj->filtrar($cod_nom="",$des_nom="",$est_nom="A");
 	$datos=$obj->extraer_dato($pun_nom);
 	if($datos["cod_nom"]=="")
 	{
