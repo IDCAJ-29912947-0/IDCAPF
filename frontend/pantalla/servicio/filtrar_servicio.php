@@ -1,11 +1,11 @@
 <?php
-require("../../../backend/clase/nomina.class.php");
+require("../../../backend/clase/servicio.class.php");
 require("../../../backend/clase/permiso.class.php");
 
-$obj=new nomina;
+$obj=new servicio;
 $objPermiso=new permiso;
 
-$permiso=$objPermiso->validar_acceso($opcion=1,$fky_usuario=1,$token=md5("12345"));
+$permiso=$objPermiso->validar_acceso($servicio=1,$fky_usuario=1,$token=md5("12345"));
 $acceso=$objPermiso->extraer_dato($permiso);
 
 if($acceso["est_per"]=="A")
@@ -16,21 +16,21 @@ if($acceso["est_per"]=="A")
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Filtrar Nómina</title>
+	<title>Filtrar Servicio</title>
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link rel="stylesheet" href="../../bootstrap-4.0/css/bootstrap.min.css">
 </head>
 <body>
 
-<form action="listar_nomina.php" method="POST">
+<form action="listar_servicio.php" method="POST">
 
 	<div class="container">
 	<div class="row justify-content-center">
-	<div class="col-10 text-center ">
+	<div class="col-8 text-center ">
 
 	 <div class="row bg-primary text-white">
 	 	 <div class="col-12 text-center">
-	  	<h3>Buscar Nómina</h3>
+	  	<h3>Buscar Servicio</h3>
 	 	 </div>
 	  </div>
 
@@ -41,14 +41,14 @@ if($acceso["est_per"]=="A")
 		     <label for="">Nombre:</label>
 		</div>
 		<div class="col-md-9 col-12">
-		    <input type="text" name="des_nom" id="des_nom" maxlength="80" class="form-control" placeholder="Nombre del Nómina" pattern="[a-zA-Z0-9 ]+" title="Solo valores Alfa-Númericos">
+		    <input type="text" name="nom_ser" id="nom_ser" maxlength="35" class="form-control" placeholder="Nombre del Servicio" pattern="[a-zA-Z0-9 ]+" title="Solo valores Alfa-Númericos">
 		</div>
 
 	  </div>
 
 	  <div class="row mt-2 bg-light">
 	  	 <div class="col-12  text-center">
-		     <input type="submit" class="btn btn-primary btn-lg" value="Filtrar Nómina">
+		     <input type="submit" class="btn btn-primary btn-lg" value="Filtrar Servicio">
 		</div>
 	   </div>	
 

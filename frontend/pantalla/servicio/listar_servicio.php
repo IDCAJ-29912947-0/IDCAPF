@@ -1,11 +1,11 @@
 <?php
-require("../../../backend/clase/nomina.class.php");
+require("../../../backend/clase/servicio.class.php");
 require("../../../backend/clase/permiso.class.php");
 
-$obj=new nomina;
+$obj=new servicio;
 $objPermiso=new permiso;
 
-$permiso=$objPermiso->validar_acceso($opcion=1,$fky_usuario=1,$token=md5("12345"));
+$permiso=$objPermiso->validar_acceso($servicio=1,$fky_usuario=1,$token=md5("12345"));
 $acceso=$objPermiso->extraer_dato($permiso);
 
 
@@ -22,7 +22,7 @@ if($acceso["est_per"]=="A")
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Listar Nómina</title>
+	<title>Listar Servicio</title>
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link rel="stylesheet" href="../../bootstrap-4.0/css/bootstrap.min.css">
 	<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
@@ -31,7 +31,7 @@ if($acceso["est_per"]=="A")
 <body>
 
 
-<form action="listar_nomina.php" method="POST">
+<form action="listar_servicio.php" method="POST">
 
 	<div class="container-fluid">
 
@@ -41,7 +41,7 @@ if($acceso["est_per"]=="A")
 
 	 <div class="row bg-primary text-white">
 	 	 <div class="col-12 text-center">
-	  	<h3>Datos de la Nómina</h3>
+	  	<h3>Datos del Servicio</h3>
 	 	 </div>
 	  </div>
 
@@ -52,19 +52,18 @@ if($acceso["est_per"]=="A")
 		  Editar 
 		  
 		</div>
-
-		<div class="col-md-1 col-12  border border-white">
-		     <span>Código</span>
+		<div class="col-md-4 col-12 border border-white ">
+		     <span>Servicio</span>
 		</div>
-
-		<div class="col-md-7 col-12 border border-white ">
-		     <span>Nombre del Nómina</span>
+		<div class="col-md-3 col-12 border border-white ">
+		     <span>Tipo de Servicio</span>
 		</div>
-
-
-		<div class="col-md-2 col-12 border border-white">
-		     <span>Detalle</span>
-		</div>		
+		<div class="col-md-2 col-12 border border-white ">
+		     <span>Precio</span>
+		</div>
+		<div class="col-md-1 col-12 border border-white">
+		     <span>Estatus</span>
+		</div>
 
 		</div> <!-- Fin Row-->
 
@@ -72,29 +71,30 @@ if($acceso["est_per"]=="A")
 		<?php
 		
 		$num_fil=0;
-		$resultado=$obj->filtrar("",$obj->des_nom,"");
+
+		$resultado=$obj->filtrar("",$obj->nom_ser,"");
 		while(($datos=$obj->extraer_dato($resultado))>0){
 		$num_fil++;	
 		?>
 
 		<div class="col-md-2 col-12 border border-white text-center">
-		  <a href="<?php echo "ver_nomina.php?cod_nom=$datos[cod_nom]"?>">Ver</a> 
-		  <a href="<?php echo "modificar_nomina.php?cod_nom=$datos[cod_nom]"?>">Editar</a>  
+		  <a href="<?php echo "ver_servicio.php?cod_ser=$datos[cod_ser]"?>">Ver</a> 
+		  <a href="<?php echo "modificar_servicio.php?cod_ser=$datos[cod_ser]"?>">Editar</a>  
 		</div>
-
+		<div class="col-md-4 col-12 border border-white text-left">
+		     <span><?php echo $datos['nom_ser']; ?></span>
+		</div>
+		<div class="col-md-3 col-12 border border-white text-left">
+		     <span><?php echo $datos['nom_tip_ser']; ?></span>
+		</div>
+		<div class="col-md-2 col-12 border border-white text-left">
+		     <span><?php echo  $obj->formatear_numero($datos['pre_ser'],2) ?></span>
+		</div>
 		<div class="col-md-1 col-12 border border-white">
-		     <span><?php echo $datos['cod_nom']; ?></span>
-		</div>
-
-		<div class="col-md-7 col-12 border border-white text-left text-capitalize">
-		     <span><?php echo $datos['des_nom']; ?></span>
-		</div>
-
-		<div class="col-md-2 col-12 border border-white">
 		     <span>
-		     	<a href="detalle_nomina.php?cod_nom=<?php echo $datos['cod_nom']?>">Detalle</a>
+		     	<?php echo ($datos['est_ser']=="A") ? "Activa":"Inactiva"; ?>
 		     </span>
-		</div>		
+		</div>
 		
 		<?php
 		}
@@ -122,7 +122,7 @@ if($acceso["est_per"]=="A")
 
 <?php
 }else{
-	$obj->mensaje("danger","No tienes permiso de accesar a esta p&aacute;gina");
+	$obj->mensaje("danger","No tienes permiso de accesar a esta p&aacute;gina.");
 }
 
 ?>

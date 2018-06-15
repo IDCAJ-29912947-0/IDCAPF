@@ -14,7 +14,7 @@ if($usuario["est_usu"]=="A")
 	header("Location: ../../menu.php");
 }else
 {
-   $obj_usu->mensaje("danger","Su Usuario y Contraseña son incorrectos, por favor modifiquelos e intente ingresar nuevamente.","Iniciar Sesión"); 
+   $obj_usu->mensaje("danger","Su Usuario y Clave son incorrectos, por favor modifiquelos e intente ingresar nuevamente.","Iniciar Sesión"); 
 }	
 
 

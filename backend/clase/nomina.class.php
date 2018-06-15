@@ -42,16 +42,8 @@ class nomina extends utilidad
 
    public function cambio_estatus(){
    		$sql="update nomina set est_nom='$this->est_nom' where cod_nom=$this->cod_nom;";
-<<<<<<< HEAD
-      
-=======
-<<<<<<< HEAD
-      
-=======
-      echo $sql;
->>>>>>> f3531111006265007d84f306c5324b460601402d
->>>>>>> 9d20626f5d16991ded198f368fc57e12e0fc0cdd
-   		return $this->ejecutar($sql);  
+
+   	return $this->ejecutar($sql);  
    	
    }//Fin Cambio Estatus   
 //==============================================================================

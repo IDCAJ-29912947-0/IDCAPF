@@ -63,7 +63,6 @@ class opcion extends utilidad
               $filtro1 $filtro2 $filtro3;"; 
 
         return $this->ejecutar($sql);  
-        echo $sql;
 
    }// Fin Filtrar
 //==============================================================================

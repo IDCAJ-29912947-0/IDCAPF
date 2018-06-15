@@ -69,6 +69,11 @@ if($acceso["est_per"]=="A")
 			  }
 			 
 		break;
+
+		case 'select_generico':
+           $puntero=$obj->select_generico($tabla="modelo",$columna_condicion="fky_marca",$obj->valor);
+           $obj->combo_generico($puntero,$nombre_combo="fky_modelo",$seleccionado="",$columna_guardar="cod_mod",$columna_mostrar="nom_mod");
+		break;
 	
 	}
 
