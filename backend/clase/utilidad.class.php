@@ -6,9 +6,9 @@
 class utilidad
 {
     private $servidor="localhost";
-//    private $usuario="platinum_usuario";
-//    private $clave="5xn@@kJL-nEa";
-//    private $base_datos="platinum_bd";
+    //private $usuario="platinum_usuario";
+    //private $clave="5xn@@kJL-nEa";
+    //private $base_datos="platinum_bd";
 
     private $usuario="root";
     private $clave="";
@@ -59,7 +59,7 @@ class utilidad
 
 //=== ejecutar: función para ejecutar una acción en la base de datos.
 	public function ejecutar($sql){
-    
+    //echo $sql;
 		$this->sql=$sql; 
 		return $this->mysqli->query($sql);
 	}// Fin de la función ejecutar()  

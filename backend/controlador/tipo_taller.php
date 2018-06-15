@@ -26,10 +26,10 @@ if($acceso["est_per"]=="A")
 			$prk_aud=$obj->ultimo_id_insertado();
 			if($prk_aud>0){
 				$obj->auditoria($prk_aud);
-				$obj->mensaje("success","Tipo de taller agregado correctamente");
+				$obj->mensaje("success","Tipo de taller agregado correctamente.");
 			}else
 			{
-				$obj->mensaje("danger","Error al agregar el Tipo de taller");
+				$obj->mensaje("danger","Error al agregar Tipo de taller.");
 			}
 			
 		break;
@@ -39,9 +39,9 @@ if($acceso["est_per"]=="A")
 			$num_aff=$obj->filas_afectadas();
 			if($num_aff>0){
 				$obj->auditoria($obj->cod_tip_tal);
-				$obj->mensaje("success","Tipo de taller modificado correctamente");
+				$obj->mensaje("success","Tipo de taller modificado correctamente.");
 			}else{
-				$obj->mensaje("danger","No se modific&oacute; ning&uacute; registro");
+				$obj->mensaje("danger","No se modific&oacute; ning&uacute;n registro.");
 			}
 			
 		break;
@@ -51,7 +51,7 @@ if($acceso["est_per"]=="A")
 			  $num_aff=$obj->filas_afectadas();
 			  if($num_aff>0){
 			  	$obj->auditoria($obj->cod_tip_tal);
-			  	$obj->mensaje("success","Tipo de taller eliminado correctamente");
+			  	$obj->mensaje("success","Tipo de taller eliminado correctamente.");
 			  }else{
 			  	$obj->mensaje("danger","Error al borrar Tipo de taller.");
 			  }
@@ -62,7 +62,7 @@ if($acceso["est_per"]=="A")
 			  $num_aff=$obj->filas_afectadas();
 			  if($num_aff>0){
 			  	$obj->auditoria($obj->cod_tip_tal);
-			  	$obj->mensaje("success","Cambio de estatus realizado correctamente");
+			  	$obj->mensaje("success","Cambio de estatus realizado correctamente.");
 			  }else{
 			  	$obj->mensaje("danger","Error al cambiar el estatus del Tipo de Taller.");
 			  }
@@ -72,7 +72,7 @@ if($acceso["est_per"]=="A")
 	}
 
 }else{
-	$obj->mensaje("danger","No tienes permiso de accesar a esta p&aacute;gina");
+	$obj->mensaje("danger","No tienes permiso de accesar a esta p&aacute;gina.");
 }
 
 

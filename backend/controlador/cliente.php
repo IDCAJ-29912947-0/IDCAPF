@@ -32,7 +32,7 @@ if($acceso["est_per"]=="A")
 			$prk_aud=$obj->ultimo_id_insertado();
 			if($prk_aud>0){
 				$obj->auditoria($prk_aud);
-				$obj->mensaje("success","Cliente agregado correctamente");
+				$obj->mensaje("success","Cliente agregado correctamente.");
 					for ($i=1; $i <6 ; $i++) 
 					{ 
 						
@@ -66,7 +66,7 @@ if($acceso["est_per"]=="A")
 					}
 				}else
 				{
-					$obj->mensaje("danger","Error al agregar Cliente");
+					$obj->mensaje("danger","Error al agregar Cliente.");
 				}
 			
 		break;
@@ -76,9 +76,9 @@ if($acceso["est_per"]=="A")
 			$num_aff=$obj->filas_afectadas();
 			if($num_aff>0){
 				$obj->auditoria($obj->cod_cli);
-				$obj->mensaje("success","Cliente modificado correctamente");
+				$obj->mensaje("success","Cliente modificado correctamente.");
 			}else{
-				$obj->mensaje("danger","No se modificó ningun dato del cliente.");
+				$obj->mensaje("danger","No se modific&oacute ning&uacute;n dato del cliente.");
 			}
 
 			    $objCliRes->asignar_valor("fky_cliente",$obj->cod_cli);
@@ -104,7 +104,7 @@ if($acceso["est_per"]=="A")
 												$res_cli=$objCliRes->agregar();
 												$num_aff2=$objCliRes->filas_afectadas();
 												if($num_aff2>0){
-													$obj->mensaje("success","Responsables modificados correctamente");
+													$obj->mensaje("success","Responsables modificados correctamente.");
 												}
 			  		 					 	}else
 			  		 					 	{
@@ -113,7 +113,7 @@ if($acceso["est_per"]=="A")
 												$res_cli=$objCliRes->agregar();
 												$num_aff2=$objCliRes->filas_afectadas();
 												if($num_aff2>0){
-													$obj->mensaje("success","Responsables modificados correctamente");
+													$obj->mensaje("success","Responsables modificados correctamente.");
 												}
 
 			  		 					 	}
@@ -134,7 +134,7 @@ if($acceso["est_per"]=="A")
 			  $num_aff=$obj->filas_afectadas();
 			  if($num_aff>0){
 			  	$obj->auditoria($obj->cod_cli);
-			  	$obj->mensaje("success","Cliente eliminado correctamente");
+			  	$obj->mensaje("success","Cliente eliminado correctamente.");
 			  }else{
 			  	$obj->mensaje("danger","Error al borrar Cliente.");
 			  }
@@ -145,7 +145,7 @@ if($acceso["est_per"]=="A")
 			  $num_aff=$obj->filas_afectadas();
 			  if($num_aff>0){
 			  	$obj->auditoria($obj->cod_cli);
-			  	$obj->mensaje("success","Cambio de estatus realizado correctamente");
+			  	$obj->mensaje("success","Cambio de estatus realizado correctamente.");
 			  }else{
 			  	$obj->mensaje("danger","Error al cambiar el estatus del Cliente.");
 			  }
@@ -155,7 +155,7 @@ if($acceso["est_per"]=="A")
 	}
 
 }else{
-	$obj->mensaje("danger","No tienes permiso de accesar a esta p&aacute;gina");
+	$obj->mensaje("danger","No tienes permiso de accesar a esta p&aacute;gina.");
 }
 
 

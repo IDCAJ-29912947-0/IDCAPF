@@ -19,7 +19,7 @@ switch ($_REQUEST["accion"])
 		$res=$obj_mod->agregar();
 		if ($res==true) 
 		{
-			$obj_mod->mensaje("success","Módulo agregado correctamente.","agregar");
+			$obj_mod->mensaje("success","M&oacute;dulo agregado correctamente.","agregar");
 			$id=$obj_mod->ultimo_id();
 			if ($id>0) //Guardamos en Auditoria
 			{
@@ -31,7 +31,7 @@ switch ($_REQUEST["accion"])
 		}
 		else
 			{
-				$obj_mod->mensaje("danger","Error al agregar Módulo.","agregar");
+				$obj_mod->mensaje("danger","Error al agregar M&oacute;dulo.","agregar");
 			}
 		break;
 
@@ -40,10 +40,10 @@ switch ($_REQUEST["accion"])
 		$obj_mod->modificar();
 		$fil_afe=$obj_mod->filas_afectadas();
 		if ($fil_afe>0) {
-			$obj_mod->mensaje("success","modulo","modificar");
+			$obj_mod->mensaje("success","M&oacute;dulo modificado correctamente.","modificar");
 			$id=$obj_mod->ultimo_id();
 		} else {
-			$obj_mod->mensaje("danger","modulo","modificar");
+			$obj_mod->mensaje("danger","No se modific&oacute; ning&uacute;n registro.","modificar");
 		}
 		
 		break;
@@ -52,15 +52,15 @@ switch ($_REQUEST["accion"])
 		$obj_mod->eliminar();
 		$fil_afe=$obj_mod->filas_afectadas();
 		if ($fil_afe>0) {
-			$obj_mod->mensaje("success","modulo","eliminar");
+			$obj_mod->mensaje("success","M&oacute;dulo eliminado correctamente.","eliminar");
 			$id=$obj_mod->ultimo_id();
 		} else {
-			$obj_mod->mensaje("danger","modulo","eliminar");
+			$obj_mod->mensaje("danger","Error al borrar M&oacute;dulo","eliminar");
 		}
 		
 		break;
-	case 'listar':
-		#
-		break;
+}else{
+	$obj->mensaje("danger","No tienes permiso de accesar a esta p&aacute;gina.");
 }
+
  ?>

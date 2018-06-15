@@ -30,7 +30,7 @@ if($acceso["est_per"]=="A")
 
 	 <div class="row bg-primary text-white">
 	 	 <div class="col-12 text-center">
-	  	<h3>Buscar del Nómina</h3>
+	  	<h3>Buscar Nómina</h3>
 	 	 </div>
 	  </div>
 

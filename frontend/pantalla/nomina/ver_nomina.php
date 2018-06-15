@@ -107,24 +107,6 @@ $datos=$obj->extraer_dato($resultado);
 		</div>
 
 	  </div>
-
-
-	  <div class="row mt-2 bg-light">
-	     <div class="col-md-4 col-12 text-left">
-		     <label for="">Estatus:</label>
-		</div>
-	  <div class="col-md-8 col-12">
-	     <select name='est_nom' id='est_nom' class='form-control' readonly>
-		 <?php
-		 $selected = ($datos['est_nom']=='G') ? "selected":"";
-		 echo "<option value='G' $selected>En Proceso</option>";
-		 $selected = ($datos['est_nom']=='P') ? "selected":"";
-		 echo "<option value='P' $selected>Pagada</option>";
-		 ?>
-		</select>
-	   </div>
-	  </div>
-
   	 </div>
    </div>
   </div> <!-- Fin Container -->

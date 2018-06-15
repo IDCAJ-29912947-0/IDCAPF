@@ -1,0 +1,52 @@
+alumno (Agrega,Modifica,Lista Cambia de Estatus Correctamente)
+area   (Agrega,Modifica,Lista Cambia de Estatus Correctamente)
+asistencia
+auditoria
+banco  (Agrega,Modifica,Lista Cambia de Estatus Correctamente)
+carrera (Agrega,Modifica,Lista Cambia de Estatus Correctamente)
+certificado
+contenido (Agrega,Modifica,Lista Cambia de Estatus Correctamente)
+contenido_por_curso
+cuenta    (Agrega,Modifica,Lista Cambia de Estatus Correctamente)
+curso     (Agrega,Modifica,Lista Cambia de Estatus Correctamente)
+empresa   (Agrega,Modifica,Lista Cambia de Estatus Correctamente)
+factura   
+factura_detalle
+falla     (Agrega,Modifica,Lista Cambia de Estatus Correctamente)
+forma_movimiento 
+horario   (Agrega,Modifica,Lista Cambia de Estatus Correctamente)
+ingreso
+inscripcion (Agrega)
+instructor  (Agrega,Modifica,Lista Cambia de Estatus Correctamente)
+iva         (Agrega,Modifica,Lista Cambia de Estatus Correctamente)
+medio_publicidad (Agrega,Modifica,Lista Cambia de Estatus Correctamente)
+modalidad
+modulo           (Agrega,Modifica,Lista Cambia de Estatus Correctamente)
+notificacion
+opcion           (Agrega,Modifica,Lista Cambia de Estatus Correctamente)
+opcion_rol
+pais
+permiso          (Agrega,Modifica,Lista Correctamente)
+pregunta_evualuacion_curso
+pregunta_quiz
+proveedor        (Agrega,Modifica,Lista Correctamente)
+quiz
+requisito         (Agrega,Modifica,Lista Correctamente)
+requisito_por_curso  (Agrega,Modifica,Lista Correctamente)
+respuesta_evaluacion_curso
+respuesta_quiz_alumno
+retiro
+rol
+solicitud
+tipo_curso           (Agrega,Modifica,Lista Correctamente)
+tipo_movimiento      Falta arreglar el fk hacia forma_movimiento
+tipo_pago            (Agrega,Modificar,Lista Correctamente)
+tipo_requisito       (Agrega,Modificar,Lista Correctamente)
+tipo_solicitud      
+tipo_usuario
+titular_factura
+turno                (Agrega,Modificar,Lista Correctamente)
+universidad
+usuario
+
+

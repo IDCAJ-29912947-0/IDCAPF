@@ -27,10 +27,10 @@ if($acceso["est_per"]=="A")
 			$prk_aud=$obj->ultimo_id_insertado();
 			if($prk_aud>0){
 				$obj->auditoria($prk_aud);
-				$obj->mensaje("success","Modelo agregado correctamente");
+				$obj->mensaje("success","Modelo agregado correctamente.");
 			}else
 			{
-				$obj->mensaje("danger","Error al agregar el Modelo");
+				$obj->mensaje("danger","Error al agregar el Modelo.");
 			}
 			
 		break;
@@ -40,9 +40,9 @@ if($acceso["est_per"]=="A")
 			$num_aff=$obj->filas_afectadas();
 			if($num_aff>0){
 				$obj->auditoria($obj->cod_mod);
-				$obj->mensaje("success","Modelo modificada correctamente");
+				$obj->mensaje("success","Modelo modificada correctamente.");
 			}else{
-				$obj->mensaje("danger","No se modific&oacute; ning&uacute;n registro");
+				$obj->mensaje("danger","No se modific&oacute; ning&uacute;n registro.");
 			}
 			
 		break;
@@ -52,7 +52,7 @@ if($acceso["est_per"]=="A")
 			  $num_aff=$obj->filas_afectadas();
 			  if($num_aff>0){
 			  	$obj->auditoria($obj->cod_mod);
-			  	$obj->mensaje("success","Modelo eliminado correctamente");
+			  	$obj->mensaje("success","Modelo eliminado correctamente.");
 			  }else{
 			  	$obj->mensaje("danger","Error al borrar Modelo.");
 			  }
@@ -63,9 +63,9 @@ if($acceso["est_per"]=="A")
 			  $num_aff=$obj->filas_afectadas();
 			  if($num_aff>0){
 			  	$obj->auditoria($obj->cod_mod);
-			  	$obj->mensaje("success","Cambio de estatus realizado correctamente");
+			  	$obj->mensaje("success","Cambio de estatus realizado correctamente.");
 			  }else{
-			  	$obj->mensaje("danger","Error al cambiar el estatus de la Modelo.");
+			  	$obj->mensaje("danger","Error al cambiar el estatus del Modelo.");
 			  }
 			 
 		break;
@@ -73,7 +73,7 @@ if($acceso["est_per"]=="A")
 	}
 
 }else{
-	$obj->mensaje("danger","No tienes permiso de accesar a esta p&aacute;gina");
+	$obj->mensaje("danger","No tienes permiso de accesar a esta p&aacute;gina.");
 }
 
 

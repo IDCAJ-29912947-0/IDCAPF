@@ -41,30 +41,35 @@ if($acceso["est_per"]=="A")
 
 	 <div class="row bg-primary text-white">
 	 	 <div class="col-12 text-center">
-	  	<h3>Datos del Nómina</h3>
+	  	<h3>Datos de la Nómina</h3>
 	 	 </div>
 	  </div>
 
 	  <div class="row mt-1 bg-primary text-white text-center">
 
 	  	<div class="col-md-2 col-12 border border-white">
+		 <small>
 		  Ver 
 		  Editar 
-		  
+		  </small>
 		</div>
 
 		<div class="col-md-1 col-12  border border-white">
 		     <span>Código</span>
 		</div>
 
-		<div class="col-md-7 col-12 border border-white ">
+		<div class="col-md-6 col-12 border border-white ">
 		     <span>Nombre del Nómina</span>
 		</div>
 
 
-		<div class="col-md-2 col-12 border border-white">
+		<div class="col-md-1 col-12 border border-white">
 		     <span>Detalle</span>
 		</div>		
+
+		<div class="col-md-2 col-12 border border-white">
+		     <span>Estatus</span>
+		</div>	
 
 		</div> <!-- Fin Row-->
 
@@ -78,23 +83,29 @@ if($acceso["est_per"]=="A")
 		?>
 
 		<div class="col-md-2 col-12 border border-white text-center">
-		  <a href="<?php echo "ver_nomina.php?cod_nom=$datos[cod_nom]"?>">Ver</a> 
-		  <a href="<?php echo "modificar_nomina.php?cod_nom=$datos[cod_nom]"?>">Editar</a>  
+		  <a href="<?php echo "ver_nomina.php?cod_nom=$datos[cod_nom]"?>"><small>Ver</small></a> 
+		  <a href="<?php echo "modificar_nomina.php?cod_nom=$datos[cod_nom]"?>"><small>Editar</small></a>  
 		</div>
 
 		<div class="col-md-1 col-12 border border-white">
-		     <span><?php echo $datos['cod_nom']; ?></span>
+		     <small><?php echo $datos['cod_nom']; ?></small>
 		</div>
 
-		<div class="col-md-7 col-12 border border-white text-left text-capitalize">
-		     <span><?php echo $datos['des_nom']; ?></span>
+		<div class="col-md-6 col-12 border border-white text-left text-capitalize">
+		     <small><?php echo $datos['des_nom']; ?></small>
 		</div>
+
+		<div class="col-md-1 col-12 border border-white">
+		     <small>
+		     	<a href="detalle_nomina.php?cod_nom=<?php echo $datos['cod_nom']?>">Detalle</a>
+		     </small>
+		</div>	
 
 		<div class="col-md-2 col-12 border border-white">
-		     <span>
-		     	<a href="detalle_nomina.php?cod_nom=<?php echo $datos['cod_nom']?>">Detalle</a>
-		     </span>
-		</div>		
+		     <small>
+		     	<?php echo $obj->ver_estatus_nomina($datos['est_nom']); ?>
+		     </small>
+		</div>				
 		
 		<?php
 		}
@@ -102,7 +113,7 @@ if($acceso["est_per"]=="A")
 		if($num_fil==0){
 		?>
 		<div class="col-12 border border-white text-center">
-		     <span>No hay registros</span>
+		     <small>No hay registros</small>
 		</div>
 		<?php
 		}	

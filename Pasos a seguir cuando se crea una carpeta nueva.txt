@@ -1,0 +1,11 @@
+cd d:
+cd wamp
+cd www
+cd sistema
+git init (para inicializar el repositorio en la carpeta)
+git remote add origin clave ssh del repositorio (para añadir los remotos)
+git fetch origin (para descargar los archivos en el repo)
+git merge origin/master (para colocar los archivos descargados en la rama master)
+git add -A (comienzo de la iteración básica y preparación de archivos nuevos para la subida a Github)
+git commit -m "Nombre del cambio realizado" (creación del commit)
+git push origin master (subida de commit + archivos nuevos a Github)

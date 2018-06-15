@@ -70,23 +70,7 @@ if($acceso["est_per"]=="A")
 
 	  </div>
 
-
-
-	  <div class="row mt-2 bg-light">
-	     <div class="col-md-4 col-12 text-left">
-		     <label for="">Estatus:</label>
-		</div>
-	    <div class="col-md-8 col-12">
-		<select name="est_nom" id="est_nom" class="form-control" required="">
-			<option value="">Seleccione...</option>
-			<option value="G">En Proceso</option>
-			<option value="P" disabled>Pagada</option>	
-		</select>
-		</div>
-	   </div>
-
-
-	  <div class="row mt-2 bg-light">
+  <div class="row mt-2 bg-light">
 	  	 <div class="col-12  text-center">
 		     <input type="submit" class="btn btn-primary btn-lg" value="Continuar">
 		</div>
