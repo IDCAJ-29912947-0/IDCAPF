@@ -108,8 +108,12 @@ $datos=$obj->extraer_dato($resultado);
 		</div>
 
 	  </div>
+<<<<<<< HEAD
 
 
+=======
+	  
+>>>>>>> 7c574f57cb41a9a1b61d8657d9fa45d011f507ec
 	  <div class="row mt-2 bg-light">
 	  	 <div class="col-12  text-center">
 		     <input type="submit" class="btn btn-primary btn-lg" value="Modificar Nómina">

@@ -12,7 +12,7 @@ class utilidad
 
     private $usuario="root";
     private $clave="";
-    private $base_datos="febrero";
+    private $base_datos="platinum_bd";
     public  $mysqli;
     public  $sql;
     private $tab_aud;

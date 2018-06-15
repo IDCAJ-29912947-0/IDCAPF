@@ -1,9 +1,9 @@
 <?php
 
 require("../clase/permiso.class.php");
-require("../clase/modelo.class.php");
+require("../clase/tipo_servicio.class.php");
 
-$obj=new modelo;
+$obj=new tipo_servicio;
 $objPermiso=new permiso;
 
 $permiso=$objPermiso->validar_acceso($opcion=1,$fky_usuario=1,$token=md5("12345"));
@@ -11,7 +11,7 @@ $acceso=$objPermiso->extraer_dato($permiso);
 
 if($acceso["est_per"]=="A")
 {
-	$obj->asignar_valor("tab_aud","modelo"); //Para Auditoria
+	$obj->asignar_valor("tab_aud","tipo_servicio"); //Para Auditoria
 	$obj->asignar_valor("fky_usuario","1"); //Para Auditoria
 	$obj->asignar_valor("acc_aud",$_REQUEST["accion"]); //Para Auditoria
 
@@ -27,10 +27,10 @@ if($acceso["est_per"]=="A")
 			$prk_aud=$obj->ultimo_id_insertado();
 			if($prk_aud>0){
 				$obj->auditoria($prk_aud);
-				$obj->mensaje("success","Modelo agregado correctamente.");
+				$obj->mensaje("success","Tipo de Servicio agregado correctamente.");
 			}else
 			{
-				$obj->mensaje("danger","Error al agregar el Modelo.");
+				$obj->mensaje("danger","Error al agregar Tipo de Servicio.");
 			}
 			
 		break;
@@ -39,8 +39,8 @@ if($acceso["est_per"]=="A")
 			$res=$obj->modificar();
 			$num_aff=$obj->filas_afectadas();
 			if($num_aff>0){
-				$obj->auditoria($obj->cod_mod);
-				$obj->mensaje("success","Modelo modificada correctamente.");
+				$obj->auditoria($obj->cod_tip_ser);
+				$obj->mensaje("success","Tipo de Servicio modificado correctamente.");
 			}else{
 				$obj->mensaje("danger","No se modific&oacute; ning&uacute;n registro.");
 			}
@@ -51,10 +51,10 @@ if($acceso["est_per"]=="A")
 			  $res=$obj->eliminar();
 			  $num_aff=$obj->filas_afectadas();
 			  if($num_aff>0){
-			  	$obj->auditoria($obj->cod_mod);
-			  	$obj->mensaje("success","Modelo eliminado correctamente.");
+			  	$obj->auditoria($obj->cod_tip_ser);
+			  	$obj->mensaje("success","Tipo de Servicio eliminado correctamente.");
 			  }else{
-			  	$obj->mensaje("danger","Error al borrar Modelo.");
+			  	$obj->mensaje("danger","Error al borrar Tipo de Servicio.");
 			  }
 		break;
 
@@ -62,17 +62,12 @@ if($acceso["est_per"]=="A")
 			  $res=$obj->cambio_estatus();
 			  $num_aff=$obj->filas_afectadas();
 			  if($num_aff>0){
-			  	$obj->auditoria($obj->cod_mod);
+			  	$obj->auditoria($obj->cod_tip_ser);
 			  	$obj->mensaje("success","Cambio de estatus realizado correctamente.");
 			  }else{
-			  	$obj->mensaje("danger","Error al cambiar el estatus del Modelo.");
+			  	$obj->mensaje("danger","Error al cambiar el estatus del Tipo de Servicio.");
 			  }
 			 
-		break;
-
-		case 'select_generico':
-           $puntero=$obj->select_generico($tabla="modelo",$columna_condicion="fky_marca",$obj->valor);
-           $obj->combo_generico($puntero,$nombre_combo="fky_modelo",$seleccionado="",$columna_guardar="cod_mod",$columna_mostrar="nom_mod");
 		break;
 	
 	}

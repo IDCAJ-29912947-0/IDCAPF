@@ -37,5 +37,21 @@ public $est_mod;
 		$sql="select * from modulo;";
 		return $this->ejecutar($sql);
 	}
+
+   	public function filtrar($cod_mod,$nom_mod,$est_mod){
+
+        $where="where 1=1";
+        
+        $filtro1 = ($cod_mod!="") ? "and cod_mod=$cod_mod":"";
+        $filtro2 = ($nom_mod!="") ? "and nom_mod like '%$nom_mod%'":"";
+        $filtro3 = ($est_mod!="") ? "and est_mod='$est_mod'":"";
+
+        $sql="select * from modulo $where $filtro1 $filtro2 $filtro3 order by nom_mod asc;"; 
+        return $this->ejecutar($sql);  
+
+
+   }// Fin Filtrar
+//==================
+
 }
  ?>

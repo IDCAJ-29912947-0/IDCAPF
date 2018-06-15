@@ -16,6 +16,7 @@ function asignar_detalle(nomina,empleado,concepto)
  		if(objAjax.status==200 && objAjax.readyState==4)
  		{
  			respuesta=objAjax.responseText
+<<<<<<< HEAD
  			if(respuesta==false)
  				{
  					alert("No puede asignar un concepto previamente asignado")
@@ -41,6 +42,17 @@ function asignar_detalle(nomina,empleado,concepto)
 					document.getElementById('zona_dinamica').innerHTML=document.getElementById('zona_dinamica').innerHTML+zona_dinamica
 		 		}
 		 	}	
+=======
+ 			res=respuesta.split("#")
+
+	        var zona_dinamica="<div class='col-md-6 col-12 text-left border border-gray'>";
+	        zona_dinamica=zona_dinamica+res[1]
+			zona_dinamica=zona_dinamica+"</div>"
+			zona_dinamica=zona_dinamica+"<div class='col-md-3 col-12 text-center border border-gray'>"+res[0]+"</div>"
+			zona_dinamica=zona_dinamica+"<div class='col-md-3 col-12 text-center border border-gray'>"+res[0]+"</div>"
+			document.getElementById('zona_dinamica').innerHTML=zona_dinamica
+ 		}	
+>>>>>>> 7c574f57cb41a9a1b61d8657d9fa45d011f507ec
 
     }
     objAjax.send(null)

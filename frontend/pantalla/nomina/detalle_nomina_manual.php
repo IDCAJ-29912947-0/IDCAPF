@@ -137,7 +137,11 @@
 			    echo "
 				<div class='row  bg-light align-items-center'>
 				    <div class='col-md-6 col-12 text-left border border-gray'>
+<<<<<<< HEAD
 			 		     ($pago[can_pag_nom]) - $pago[des_con_nom]
+=======
+			 		     $pago[des_con_nom]
+>>>>>>> 7c574f57cb41a9a1b61d8657d9fa45d011f507ec
 					</div>
 
 					<div class='col-md-3 col-12 text-center border border-gray'>
@@ -158,7 +162,11 @@
 			    echo "
 				<div class='row  bg-light align-items-center'>
 				    <div class='col-md-6 col-12 text-left border border-gray'>
+<<<<<<< HEAD
 			 		      ($pago[can_pag_nom]) - $pago[des_con_nom]
+=======
+			 		     $pago[des_con_nom]
+>>>>>>> 7c574f57cb41a9a1b61d8657d9fa45d011f507ec
 					</div>
 
 					<div class='col-md-3 col-12 text-center border border-gray'>
@@ -173,8 +181,12 @@
 		}
 ?>
 
+<<<<<<< HEAD
 <!-- class="row bg-light align-items-center" -->
 	  <div id="zona_dinamica" class="row bg-light align-items-center">
+=======
+	  <div class="row bg-light align-items-center" id="zona_dinamica">
+>>>>>>> 7c574f57cb41a9a1b61d8657d9fa45d011f507ec
 			 									
 	  </div>	
 
@@ -203,7 +215,11 @@
 		{
 				  echo "<div class='row  bg-light align-items-center'>
 							<div class='col-md-6 col-12 text-left border border-gray'>
+<<<<<<< HEAD
 							  $concepto_nomina[des_con_nom]  
+=======
+							   $concepto_nomina[des_con_nom]  
+>>>>>>> 7c574f57cb41a9a1b61d8657d9fa45d011f507ec
 							</div>
 							<div class='col-md-4 col-12 border border-gray'>
 							    $concepto_nomina[for_con_nom]  

@@ -66,14 +66,10 @@ class nomina extends utilidad
 
           case 'I':
             return "Anulada";
-<<<<<<< HEAD
           break;   
           default:
             return "Sin Estatus Valido";
           break;              
-=======
-          break;                 
->>>>>>> 7c574f57cb41a9a1b61d8657d9fa45d011f507ec
       }
    }
 
@@ -196,11 +192,7 @@ class nomina extends utilidad
       $sql2="select $formula as monto";
       $pun_for=$this->ejecutar($sql2);
       $monto=$this->extraer_dato($pun_for);
-<<<<<<< HEAD
       $mon_pag_nom=$monto["monto"]*$frecuencia;
-=======
-      $mon_pag_nom=$monto["monto"];
->>>>>>> 7c574f57cb41a9a1b61d8657d9fa45d011f507ec
 
      $sql3="INSERT into pago_nomina
             (mon_pag_nom,

@@ -21,7 +21,7 @@ class nomina extends utilidad
 //==============================================================================
 
    public function modificar(){
-      $sql="update nomina set des_nom='$this->des_nom',ini_nom='$this->ini_nom',fin_nom='$this->fin_nom',tot_nom=$this->tot_nom,tot_asi=$this->tot_asi,tot_ded=$this->tot_ded where cod_nom='$this->cod_nom';";
+      $sql="update nomina set des_nom='$this->des_nom',ini_nom='$this->ini_nom',fin_nom='$this->fin_nom',tot_nom=$this->tot_nom,tot_asi=$this->tot_asi,tot_ded=$this->tot_ded,est_nom='$this->est_nom' where cod_nom='$this->cod_nom';";
    	return $this->ejecutar($sql);
    	
    }//Fin Modificar  
@@ -42,41 +42,10 @@ class nomina extends utilidad
 
    public function cambio_estatus(){
    		$sql="update nomina set est_nom='$this->est_nom' where cod_nom=$this->cod_nom;";
-
-   	return $this->ejecutar($sql);  
+      echo $sql;
+   		return $this->ejecutar($sql);  
    	
    }//Fin Cambio Estatus   
-//==============================================================================
-
-   public function ver_estatus_nomina($est_nom)
-   {
-      switch ($est_nom) 
-      {
-         case 'A':
-           return "Abierta";
-          break;
-
-          case 'G':
-            return "Generada";
-          break;
- 
-          case 'C':
-            return "Cerrada";
-          break;
-
-          case 'I':
-            return "Anulada";
-<<<<<<< HEAD
-          break;   
-          default:
-            return "Sin Estatus Valido";
-          break;              
-=======
-          break;                 
->>>>>>> 7c574f57cb41a9a1b61d8657d9fa45d011f507ec
-      }
-   }
-
 //==============================================================================
 
    public function filtrar($cod_nom,$des_nom,$est_nom){
@@ -137,14 +106,12 @@ class nomina extends utilidad
                  fky_nomina,
                 fky_empleado,
                 fky_concepto_nomina,
-                can_pag_nom,
                 est_pag_nom) 
               values
                 ($mon_pag_nom,
                 $this->cod_nom,
                 $empleado[cod_emp],
                 $concepto_nomina[cod_con_nom],
-                1,
                 'D')";
 
               $pun_pag_nom=$this->ejecutar($sql5);
@@ -164,63 +131,7 @@ class nomina extends utilidad
      return ($error==1)?false:true;
 
    }
-
 //==============================================================================
-
- public function agregar_detalle_nomina($fky_nomina,$fky_empleado,$fky_concepto,$frecuencia)
- {
-    
-      $sql0="select e.cod_emp,e.sal_emp from empleado e where cod_emp=$fky_empleado";
-      $pun_emp=$this->ejecutar($sql0);
-      $empleado=$this->extraer_dato($pun_emp);
-
-      $sql="select for_con_nom from concepto_nomina where cod_con_nom=$fky_concepto";
-      $pun_pag_nom=$this->ejecutar($sql);
-      $form=$this->extraer_dato($pun_pag_nom);
-      $formula=$form["for_con_nom"];
-
-      $sql1="select vn.nom_var_nom,vn.val_var_nom from variable_nomina vn where vn.est_var_nom='A'";
-      $pun_var_nom=$this->ejecutar($sql1);
-
-      while(($variable_nomina=$this->extraer_dato($pun_var_nom))>0)    
-      {
-                if($variable_nomina["nom_var_nom"]=="SALME")
-                 {
-                    $variable_nomina["val_var_nom"]=$empleado["sal_emp"];
-                 } 
-                
-                $formula=str_replace($variable_nomina["nom_var_nom"],$variable_nomina["val_var_nom"], $formula);
-                
-      }     
-
-      $sql2="select $formula as monto";
-      $pun_for=$this->ejecutar($sql2);
-      $monto=$this->extraer_dato($pun_for);
-<<<<<<< HEAD
-      $mon_pag_nom=$monto["monto"]*$frecuencia;
-=======
-      $mon_pag_nom=$monto["monto"];
->>>>>>> 7c574f57cb41a9a1b61d8657d9fa45d011f507ec
-
-     $sql3="INSERT into pago_nomina
-            (mon_pag_nom,
-             fky_nomina,
-             fky_empleado,
-             fky_concepto_nomina,
-             can_pag_nom,
-             est_pag_nom         
-          )values
-            ($mon_pag_nom,
-             $fky_nomina,
-             $fky_empleado,
-             $fky_concepto,
-             $frecuencia,
-             'D'
-           )";
-      return $this->ejecutar($sql3);  
- }
-
-
 
 }//Fin de la Clase
 ?>

@@ -1,46 +1,29 @@
 <?php
+require_once("utilidad.class.php");
 
-require_once("utilidad.class.php"); 
-
-class modelo extends utilidad
+class tipo_servicio extends utilidad
 {
-   public $cod_mod; 
-   public $nom_mod; 
-   public $fky_marca; 
-   public $est_mod; 
-
+   public $cod_tip_ser;
+   public $nom_tip_ser;
+   public $est_tip_ser;
 
 //==============================================================================
    public function agregar(){
 
-    	$sql="insert into modelo(
-            nom_mod, 
-            fky_marca, 
-            est_mod)
-            values(
-            '$this->nom_mod', 
-            '$this->fky_marca', 
-            '$this->est_mod'     
-            );";
-
+    	$sql="insert into tipo_servicio(nom_tip_ser,est_tip_ser)values('$this->nom_tip_ser','$this->est_tip_ser');";
     	return $this->ejecutar($sql);
    }//Fin Agregar
 //==============================================================================
 
    public function modificar(){
-   		$sql="update modelo set 
-              nom_mod='$this->nom_mod', 
-              fky_marca=$this->fky_marca, 
-              est_mod='$this->est_mod'
-              where
-              cod_mod=$this->cod_mod;";
-   		return $this->ejecutar($sql);
+      $sql="update tipo_servicio set nom_tip_ser='$this->nom_tip_ser',est_tip_ser='$this->est_tip_ser' where cod_tip_ser='$this->cod_tip_ser';";
+   	return $this->ejecutar($sql);
    	
    }//Fin Modificar  
 //==============================================================================
 
    public function listar(){
-   		$sql="select * from modelo where est_mod='$this->est_mod';";
+   		$sql="select * from tipo_servicio where est_tip_ser='$this->est_tip_ser' order by nom_tip_ser asc;";
    		return $this->ejecutar($sql);
    	
    }//Fin Listar 
@@ -59,19 +42,17 @@ class modelo extends utilidad
    }//Fin Cambio Estatus   
 //==============================================================================
 
-   public function filtrar($cod_mod,$nom_mod,$est_mod){
+   public function filtrar($cod_tip_ser,$nom_tip_ser,$est_tip_ser){
+
+        $where="where 1=1";
         
-        $filtro1 = ($cod_mod!="") ? "and cod_mod=$cod_mod":"";
-        $filtro2 = ($nom_mod!="") ? "and nom_mod like '%$nom_mod%'":"";
-        $filtro3 = ($est_mod!="") ? "and est_mod='$est_mod'":"";
+        $filtro1 = ($cod_tip_ser!="") ? "and cod_tip_ser=$cod_tip_ser":"";
+        $filtro2 = ($nom_tip_ser!="") ? "and nom_tip_ser like '%$nom_tip_ser%'":"";
+        $filtro3 = ($est_tip_ser!="") ? "and est_tip_ser='$est_tip_ser'":"";
 
-        $sql="select m.*,mm.nom_mar
-              from modelo m,marca mm
-              where 
-              m.fky_marca=mm.cod_mar  
-              $filtro1 $filtro2 $filtro3;"; 
-
+        $sql="select * from tipo_servicio $where $filtro1 $filtro2 $filtro3 order by nom_tip_ser asc;"; 
         return $this->ejecutar($sql);  
+
 
    }// Fin Filtrar
 //==============================================================================
